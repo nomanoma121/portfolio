@@ -1,95 +1,46 @@
-import Image from "next/image";
+import React from "react";
+import Hero from "./components/Hero/Hero";
+import Header from "./components/Header/Header";
 import styles from "./page.module.css";
+import ProgressBar from "./components/ProgressBar/ProgressBar";
 
-export default function Home() {
+function page() {
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol>
-          <li>
-            Get started by editing <code>app/page.tsx</code>.
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondary}
-          >
-            Read our docs
-          </a>
+    <div>
+      <Hero />
+      <Header />
+      <div className={styles.main}>
+        <div className={styles.container}>
+          <div className={styles.content}>
+            <h1 className={styles.title}>About</h1>
+            <p className={styles.sentence}>
+              埼玉大学に通う大学一年生です。高校生のころにプログラミングを触り始めて、大学生になってから本格的に勉強しています。大学ではMaximumというプログラミングサークルに所属しています。機械学習や画像処理などに興味があるため今後はWeb以外の分野も勉強していきたいと思っています。
+            </p>
+          </div>
+          <div className={styles.content}>
+            <h1 className={styles.title}>Skills</h1>
+            <p className={styles.sentence}>現在はおもにWeb開発をおこなっているため、JavaScriptをメインで使っています。</p>
+            <div className={styles.mySkills}>
+              <ProgressBar title={"HTML&CSS"} percentage={80} />
+              <ProgressBar title={"JavaScript"} percentage={70} />
+              <ProgressBar title={"React/Next.js"} percentage={60} />
+              <ProgressBar title={"Node.js"} percentage={40} />
+              <ProgressBar title={"Python"} percentage={20} />
+              <ProgressBar title={"C++"} percentage={30} />
+            </div>
+          </div>
+          <div className={styles.content}>
+            <h1 className={styles.title}>Works</h1>
+            <div></div>
+          </div>
+          <div className={styles.content}>
+            <h1 className={styles.title}>Blogs</h1>
+            <div></div>
+          </div>
         </div>
-      </main>
-      <footer className={styles.footer}>
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      </div>
     </div>
   );
 }
+
+export default page;

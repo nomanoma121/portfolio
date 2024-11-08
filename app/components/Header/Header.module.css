@@ -1,0 +1,49 @@
+.container {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: 10vh;
+  color: #DDE6EDF0;
+  background-color: #27374D;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  z-index: 999;
+}
+
+.headerMenu {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-right: 120px;
+}
+
+.button {
+  font-size: 18px;
+  margin: 0 10px;
+
+}
+ 
+.button {
+  font-size: 18px;
+  margin: 0 10px;
+  padding-bottom: 5px;
+  position: relative;
+}
+.button::before {
+  background: #DDE6EDF0;
+  content: '';
+  width: 100%;
+  height: 2px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  margin: auto;
+  transform-origin: right top;
+  transform: scale(0, 1);
+  transition: transform .3s;
+}
+.button:hover::before {
+  transform-origin: center top;
+  transform: scale(1, 1);
+}
