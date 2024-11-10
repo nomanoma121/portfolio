@@ -7,7 +7,7 @@
   justify-content: space-between;
 }
 
-.title {
+.name {
   font-size: 15px;
   color: #27374D;
 }
@@ -19,7 +19,7 @@
 
 .progressBar {
   width: 350px;
-  height: 25px;
+  height: 15px;
   background-color: #9DB2BF;
   border-radius: 40px;
 }

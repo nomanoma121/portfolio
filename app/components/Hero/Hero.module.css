@@ -1,12 +1,30 @@
 .container {
   background-color: #27374D;
   width: 100%;
-  height: 90vh;
+  height: calc(100vh - 80px);
   display: flex;
   justify-content: center;
   align-items: center;
   color: #DDE6EDF0;
-  font-size: 32px;
+  font-size: 40px;
 }
 
+.name {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
+.caption {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.subtitle {
+  color:  #526D82;
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
