@@ -1,8 +1,11 @@
-import React from 'react'
+import React from 'react';
+import Header from "../components/Header/Header";
 
 function WorksList() {
   return (
-    <div>準備中</div>
+    <div>
+      <p>準備中</p>
+    </div>
   )
 }
 

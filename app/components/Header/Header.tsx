@@ -1,18 +1,24 @@
 import React from "react";
 import styles from "./Header.module.css";
+import Link from "next/link";
 
-function Header({ scrollToSection }) {
+function Header({ scrollToSection }: any) {
+  const handleClick = () => {
+    
+  }
 
   return (
-    <div className={styles.container}>
+    <header className={styles.container}>
       <div className={styles.headerMenu}>
-        <button className={styles.button} onClick={() => scrollToSection("home")}>Home</button>
-        <button className={styles.button} onClick={() => scrollToSection("about")}>About</button>
-        <button className={styles.button} onClick={() => scrollToSection("skills")}>Skills</button>
-        <button className={styles.button} onClick={() => scrollToSection("works")}>Works</button>
-        <button className={styles.button} onClick={() => scrollToSection("blogs")}>Blogs</button>
+        <ul>
+          <li onClick={handleClick}>Home</li> 
+          <li onClick={handleClick}>About</li>
+          <li onClick={handleClick}>Skills</li>
+          <li onClick={handleClick}>Works</li>
+          <li onClick={handleClick}>Blogs</li>
+        </ul>
       </div>
-    </div>
+    </header>
   );
 }
 

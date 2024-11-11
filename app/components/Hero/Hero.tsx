@@ -1,31 +1,19 @@
-import React from "react";
+import React, { ReactNode } from "react";
 import styles from "./Hero.module.css";
-import { motion } from "framer-motion";
 import Ripples from "../Animation/Ripples";
+import Fadein from "../Animation/Fadein";
 
-function Hero({ sectionRefs }) {
+function Hero({ sectionRefs }:any) {
   return (
     <div className={styles.container}>
       <Ripples />
       <section ref={sectionRefs.home}>
-        <motion.div
-          className={styles.name}
-          initial={{ y: -30, opacity: 0 }}
-          whileInView={{ y: 0, opacity: 1 }}
-          transition={{ duration: 2, delay: 0.9 }}
-          viewport={{ once: true }}
-        >
-          <h1>nomanoma121</h1>
-        </motion.div>
-        <motion.div
-          className={styles.subtitle}
-          initial={{ y: 30, opacity: 0 }}
-          whileInView={{ y: 0, opacity: 1 }}
-          transition={{ duration: 2, delay: 1.3 }}
-          viewport={{ once: true }}
-        >
-          <p>Web Developer</p>
-        </motion.div>
+        <Fadein start={-30} duration={2} delay={0.9}>
+          <h1 className={styles.name}>nomanoma121</h1>
+        </Fadein>
+        <Fadein start={20} duration={2} delay={1.1}>
+          <p className={styles.subtitle}>Web Developer</p>
+        </Fadein>
       </section>
     </div>
   );

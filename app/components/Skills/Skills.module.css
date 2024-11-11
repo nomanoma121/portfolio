@@ -1,0 +1,18 @@
+.title {
+  font-size: 30px;
+  color: #27374D;
+  margin-bottom: 30px; 
+}
+
+.sentence {
+  color: #27374D; 
+  font-weight: 400;
+  line-height: 30px;
+}
+
+.mySkills {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 20px;
+}
