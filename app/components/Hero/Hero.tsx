@@ -1,13 +1,13 @@
-import React, { ReactNode } from "react";
+import React from "react";
 import styles from "./Hero.module.css";
 import Ripples from "../Animation/Ripples";
 import Fadein from "../Animation/Fadein";
 
-function Hero({ sectionRefs }:any) {
+function Hero() {
   return (
-    <div className={styles.container}>
+    <div className={styles.container} id="home">
       <Ripples />
-      <section ref={sectionRefs.home}>
+      <section>
         <Fadein start={-30} duration={2} delay={0.9}>
           <h1 className={styles.name}>nomanoma121</h1>
         </Fadein>

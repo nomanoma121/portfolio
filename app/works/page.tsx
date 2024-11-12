@@ -1,10 +1,9 @@
 import React from 'react';
-import Header from "../components/Header/Header";
 
 function WorksList() {
   return (
     <div>
-      <p>準備中</p>
+      <p>ここは制作物一覧ページ。ただいま準備中</p>
     </div>
   )
 }

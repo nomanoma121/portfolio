@@ -59,3 +59,7 @@ input, textarea, select {
 body {
   background-color: #DDE6ED;
 }
+
+html {
+  scroll-behavior: smooth;
+}

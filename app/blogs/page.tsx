@@ -1,8 +1,9 @@
 import React from 'react'
-
 function BlogList() {
   return (
-    <div>準備中</div>
+    <div>
+      <p>ここはブログ一覧ページ。ただいま準備中</p>
+    </div>
   )
 }
 
