@@ -14,7 +14,7 @@ function Ripples() {
   }, []);
 
   //レイアウトが崩れないように小さいほうにあわせる
-  const circleSize = Math.min(screenHeight, screenWidth) - 20;
+  const circleSize = Math.min(screenHeight, screenWidth) - 50;
   const smallerDimension = circleSize * 0.95;
   return (
     <>
