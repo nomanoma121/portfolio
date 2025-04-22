@@ -1,31 +1,31 @@
 .container {
-  background-color: #27374D;
-  width: 100%;
-  height: calc(100vh - 80px);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #DDE6EDF0;
-  font-size: 40px;
+	background-color: #27374d;
+	width: 100%;
+	height: calc(100vh - 80px);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: #dde6edf0;
+	font-size: 40px;
 }
 
 .name {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 .caption {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 30px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 30px;
 }
 
 .subtitle {
-  color:  #526D82;
-  font-size: 30px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+	color: #526d82;
+	font-size: 30px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }

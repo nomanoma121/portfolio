@@ -1,12 +1,12 @@
 .container {
-  margin: 0 auto;
-  width: 80%;
+	margin: 0 auto;
+	width: 80%;
 }
 
 .content {
-  display: flex;
-  flex-flow: column;
-  justify-content: center;
-  align-items: center;
-  margin: 100px 0;
+	display: flex;
+	flex-flow: column;
+	justify-content: center;
+	align-items: center;
+	margin: 100px 0;
 }

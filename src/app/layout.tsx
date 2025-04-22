@@ -1,26 +1,15 @@
-"use client";
-import { ReactNode } from 'react';
-import { usePathname } from "next/navigation";
-import Hero from "./components/Hero/Hero";
-import Header from "./components/Header/Header";
-import './globals.css';
+import { Header } from "../components/header";
+import { Hero } from "../components/hero";
+import "./globals.css";
 
-type LayoutProps = {
-  children: ReactNode;
-};
-
-export default function RootLayout({ children }: LayoutProps) {
-  const pathname = usePathname();
-  const isRootPage = pathname == "/";
-  return (
-    <html lang="en">
-      <body>
-        {isRootPage && 
-          <Hero />
-        }
-        <Header />
-        {children}
-      </body>
-    </html>
-  );
+export default function RootLayout({ children }) {
+	return (
+		<html lang="en">
+			<body>
+				<Hero />
+				<Header />
+				{children}
+			</body>
+		</html>
+	);
 }
