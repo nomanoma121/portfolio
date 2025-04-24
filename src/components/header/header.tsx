@@ -1,26 +1,79 @@
 import Link from "next/link";
-import styles from "./Header.module.css";
+import { css } from "../../../styled-system/css";
 
 export const Header = () => {
-	return (
-		<header className={styles.container}>
-			<ul className={styles.headerMenu}>
-				<li>
-					<Link href="./" className={styles.headerList}>
-						Home
-					</Link>
-				</li>
-				<li>
-					<Link href="./works" className={styles.headerList}>
-						Works
-					</Link>
-				</li>
-				<li>
-					<Link href="./blogs" className={styles.headerList}>
-						Blogs
-					</Link>
-				</li>
-			</ul>
-		</header>
-	);
+	const headerLink = css({
+		fontSize: '19px',
+		margin: '0 10px',
+		paddingBottom: '5px',
+		position: 'relative',
+	
+		_before: {
+			background: '#dde6edf0',
+			content: '""',
+			width: '100%',
+			height: '2px',
+			position: 'absolute',
+			left: 0,
+			bottom: 0,
+			margin: 'auto',
+			transformOrigin: 'right top',
+			transform: 'scale(0, 1)',
+			transition: 'transform 0.3s',
+		},
+	
+		_hover: {
+			_before: {
+				transformOrigin: 'center top',
+				transform: 'scale(1, 1)',
+			},
+		},
+	});
+
+  return (
+    <header
+      className={css({
+        position: "sticky",
+        top: "0",
+        width: "100%",
+        height: "80px",
+        color: "#dde6edf0",
+        backgroundColor: "#27374d",
+        display: "flex",
+        justifyContent: "flex-end",
+        alignItems: "center",
+        zIndex: 10,
+        margin: 0,
+        boxShadow: "0 4px 6px rgba(0, 0, 0, 0.3)",
+      })}
+    >
+      <ul
+        className={css({
+          display: "flex",
+          justifyContent: "flex-end",
+          alignItems: "center",
+          marginRight: "120px",
+        })}
+      >
+        <li>
+          <Link
+            href="./"
+            className={headerLink}
+          >
+            Home
+          </Link>
+        </li>
+        <li>
+          <Link href="./works" className={headerLink}>
+            Works
+          </Link>
+        </li>
+        <li>
+          <Link href="./blogs" className={headerLink}>
+            Blogs
+          </Link>
+        </li>
+      </ul>
+    </header>
+  );
 };
