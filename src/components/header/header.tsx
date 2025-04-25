@@ -3,7 +3,7 @@ import { css } from "../../../styled-system/css";
 
 export const Header = () => {
 	const headerLink = css({
-		fontSize: '19px',
+		fontSize: 'md',
 		margin: '0 10px',
 		paddingBottom: '5px',
 		position: 'relative',
@@ -36,40 +36,39 @@ export const Header = () => {
         position: "sticky",
         top: "0",
         width: "100%",
-        height: "80px",
+        height: "70px",
         color: "#dde6edf0",
         backgroundColor: "#27374d",
         display: "flex",
-        justifyContent: "flex-end",
+				justifyContent: "center",
         alignItems: "center",
         zIndex: 10,
         margin: 0,
-        boxShadow: "0 4px 6px rgba(0, 0, 0, 0.3)",
+        // boxShadow: "0 4px 6px rgba(0, 0, 0, 0.3)",
       })}
     >
       <ul
         className={css({
           display: "flex",
-          justifyContent: "flex-end",
+					justifyContent: "center",
           alignItems: "center",
-          marginRight: "120px",
         })}
       >
         <li>
           <Link
-            href="./"
+            href="/"
             className={headerLink}
           >
             Home
           </Link>
         </li>
         <li>
-          <Link href="./works" className={headerLink}>
+          <Link href="/works" className={headerLink}>
             Works
           </Link>
         </li>
         <li>
-          <Link href="./blogs" className={headerLink}>
+          <Link href="/blogs" className={headerLink}>
             Blogs
           </Link>
         </li>

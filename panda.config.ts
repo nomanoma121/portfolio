@@ -23,6 +23,11 @@ export default defineConfig({
       },
     },
   },
+  globalCss: {
+    p: {
+      color: "primary",
+    }
+  },
 
   // The output directory for your css system
   outdir: "styled-system",

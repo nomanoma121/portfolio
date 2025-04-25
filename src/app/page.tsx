@@ -4,84 +4,79 @@ import { Hero } from "../components/hero";
 
 const Home = () => {
   const section = css({
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "center",
-    alignItems: "center",
-    gap: "20px",
-    padding: "20px",
-    textAlign: "center",
-    backgroundColor: "#27374d",
     width: "100%",
-    color: "#dde6edf0",
-    fontSize: "40px",
-    height: "100vh",
+    margin: "0 auto",
+    padding: "20px",
   });
 
   return (
     <div>
       <Hero />
       <Header />
-      <section className={section}>
-        <h3>About</h3>
-        <p>
-          こんにちは、nomanoma121です。Web開発者として活動しています。
-          <br />
-          このサイトは私のポートフォリオです。
-          <br />
-          現在はおもにWeb開発をおこなっているため、JavaScriptをメインで使っています。
-          <br />
-          ReactやNext.jsを使用して、フロントエンドの開発をおこなっています。
-          <br />
-          また、Node.jsやExpressを使用して、バックエンドの開発もおこなっています。
-          <br />
-          最近は、TypeScriptを使用して、より安全なコードを書くことを心がけています。
-          <br />
-          また、デザインにも興味があり、Figmaを使用して、UI/UXデザインをおこなっています。
-          <br />
-          このサイトでは、私の制作物やブログを公開しています。
-          <br />
-          ぜひご覧ください。
-          <br />
-        </p>
-      </section>
-      <section className={section}>
-        <h3>Skills</h3>
-        <p>
-          - HTML/CSS/JavaScript
-          <br />
-          - React/Next.js
-          <br />
-          - Node.js/Express
-          <br />
-          - TypeScript
-          <br />
-          - Figma
-          <br />- Git/GitHub
-        </p>
-      </section>
-      <section className={section}>
-        <h3>Works</h3>
-        <p>現在制作中です。</p>
-      </section>
-      <section className={section}>
-        <h3>Blog</h3>
-        <p>現在制作中です。</p>
-      </section>
-      <footer
+      <div
         className={css({
-          backgroundColor: "#27374d",
           width: "100%",
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          color: "#dde6edf0",
-          fontSize: "20px",
-          height: "100px",
+          padding: "0 20px",
         })}
       >
-        <p>© 2023 nomanoma121</p>
-      </footer>
+        <section className={section}>
+          <h3>About</h3>
+          <p>
+            2006年愛知生まれ。埼玉大学工学部情報工学科に在籍中。
+            <br />
+            プログラミングを本格的に始めたのは大学に入学してからで、もうすぐ1年がになります。
+            <br />
+            現在は大学のプログラミングサークルに所属し、共同開発や個人開発を行っています。
+            <br />
+            インフラ分野にも興味があるため、今後はそちらの分野にも挑戦していきたと考えています。
+          </p>
+        </section>
+        <section className={section}>
+          <h3>Skills</h3>
+          <p>
+            - HTML/CSS/JavaScript
+            <br />
+            - React/Next.js
+            <br />
+            - Node.js/Express
+            <br />
+            - TypeScript
+            <br />
+            - Figma
+            <br />- Git/GitHub
+          </p>
+        </section>
+        <section className={section}>
+          <h3>Works</h3>
+          <p>現在制作中です。</p>
+        </section>
+        <section className={section}>
+          <h3>Blog</h3>
+          <p>現在制作中です。aaaa
+						<br />
+						2024年1月から始める予定です。
+						<br />
+						<br/>
+						- 2024年1月から始める予定です。
+						<br />
+						- 2024年1月から始める予定です。
+						<br />
+						- 2024年1月から始める予定です。
+						<br />
+						- 2024年1月から始める予定です。
+					</p>
+				</section>
+				<section className={section}>
+					<h3>Contact</h3>
+					<p>
+						Twitter:{" "}
+						<a href="https://twitter.com/nomanoma121" target="_blank">
+							@nomanoma121
+						</a>
+						<br />
+					</p>
+        </section>
+      </div>
     </div>
   );
 };
