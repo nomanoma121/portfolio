@@ -1,4 +1,5 @@
 import { css } from "../../../styled-system/css";
+import Link from "next/link";
 
 export const Hero = () => {
 	const icon = css({
@@ -56,8 +57,12 @@ export const Hero = () => {
 						nomanoma121
 					</h1>
 					<div className={css({ display: "flex", marginTop: "10px" })}>
-						<img src="/images/github.svg" className={logo} />
-						<img src="/images/x.svg" className={logo} />
+						<Link href="https://github.com/nomanoma121" target="_blank">
+							<img src="/images/github.svg" className={logo} />
+						</Link>
+						<Link href="https://x.com/sobur1al" target="_blank">
+							<img src="/images/x.svg" className={logo} />
+						</Link>
 					</div>
 				</div>
 			</div>

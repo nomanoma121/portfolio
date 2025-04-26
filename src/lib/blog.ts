@@ -1,0 +1,49 @@
+import fs from "fs";
+import path from "path";
+import matter from "gray-matter";
+import { remark } from "remark";
+import html from "remark-html";
+
+const blogsDirectory = path.join(process.cwd(), "src/content/blogs");
+
+type BlogFrontMatter = {
+	title: string;
+	description?: string;
+	date: string;
+};
+
+export async function getBlog(slug: string) {
+	const filePath = path.join(blogsDirectory, `${slug}.md`);
+	const fileContents = await fs.promises.readFile(filePath, "utf8");
+
+	const { data, content } = matter(fileContents);
+
+	// remarkでMarkdown→HTMLに変換
+	const processedContent = await remark().use(html).process(content);
+	const contentHtml = processedContent.toString();
+
+	return {
+		slug,
+		contentHtml,
+		title: data.title,
+		description: data.description || "",
+	};
+}
+
+export function getAllBlogs() {
+	const fileNames = fs.readdirSync(blogsDirectory);
+
+	return fileNames.map((fileName) => {
+		const slug = fileName.replace(/\.md$/, "");
+		const fullPath = path.join(blogsDirectory, fileName);
+		const fileContents = fs.readFileSync(fullPath, "utf8");
+		const { data } = matter(fileContents);
+		const { title, description } = data as BlogFrontMatter;
+
+		return {
+			slug,
+			title,
+			description: description || "",
+		};
+	});
+}
