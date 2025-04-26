@@ -1,7 +1,7 @@
 import { getAllBlogs, getBlog } from "../../../lib/blog";
 import { Metadata } from "next";
 import { Header } from "../../../components/header";
-
+import { Container } from "../../../components/container";
 type Params = {
 	slug: string;
 };
@@ -16,7 +16,9 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({
 	params,
-}: { params: Params }): Promise<Metadata> {
+}: {
+	params: Params;
+}): Promise<Metadata> {
 	const blog = await getBlog(params.slug);
 
 	return {
@@ -31,8 +33,10 @@ export default async function BlogPage({ params }: { params: Params }) {
 	return (
 		<main className="prose mx-auto p-8">
 			<Header />
-			<h1>{blog.title}</h1>
-			<article dangerouslySetInnerHTML={{ __html: blog.contentHtml }} />
+			<Container>
+				<h1>{blog.title}</h1>
+				<article dangerouslySetInnerHTML={{ __html: blog.contentHtml }} />
+			</Container>
 		</main>
 	);
 }

@@ -10,7 +10,14 @@ const Blogs = () => {
 		<>
 			<Header />
 			<Container>
-				<p>Hello, From Blogs Page</p>
+				<h1 className={css({
+					fontSize: "30px",
+					fontWeight: "500",
+					color: "primary",
+					marginBottom: "20px",
+					display: "block",
+					textAlign: "center",
+				})}>Blogs</h1>
 				<div
 					className={css({
 						display: "flex",
@@ -25,6 +32,7 @@ const Blogs = () => {
 							slug={blog.slug}
 							title={blog.title}
 							description={blog.description}
+							date={blog.date}
 						/>
 					))}
 				</div>

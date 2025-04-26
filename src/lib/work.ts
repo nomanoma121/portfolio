@@ -4,16 +4,18 @@ import matter from "gray-matter";
 import { remark } from "remark";
 import html from "remark-html";
 
-const blogsDirectory = path.join(process.cwd(), "src/content/blogs");
+// TODO: blog.tsとworks.tsの重複をなくす
 
-type BlogFrontMatter = {
+const worksDirectory = path.join(process.cwd(), "src/content/works");
+
+type WorkFrontMatter = {
 	title: string;
 	description?: string;
 	date: string;
 };
 
 export async function getBlog(slug: string) {
-	const filePath = path.join(blogsDirectory, `${slug}.md`);
+	const filePath = path.join(worksDirectory, `${slug}.md`);
 	const fileContents = await fs.promises.readFile(filePath, "utf8");
 
 	const { data, content } = matter(fileContents);
@@ -31,20 +33,19 @@ export async function getBlog(slug: string) {
 }
 
 export function getAllBlogs() {
-	const fileNames = fs.readdirSync(blogsDirectory);
+	const fileNames = fs.readdirSync(worksDirectory);
 
 	return fileNames.map((fileName) => {
 		const slug = fileName.replace(/\.md$/, "");
-		const fullPath = path.join(blogsDirectory, fileName);
+		const fullPath = path.join(worksDirectory, fileName);
 		const fileContents = fs.readFileSync(fullPath, "utf8");
 		const { data } = matter(fileContents);
-		const { title, description, date } = data as BlogFrontMatter;
+		const { title, description } = data as WorkFrontMatter;
 
 		return {
 			slug,
 			title,
 			description: description || "",
-			date: date,
 		};
 	});
 }

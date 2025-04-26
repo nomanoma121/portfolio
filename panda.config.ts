@@ -23,9 +23,20 @@ export default defineConfig({
       },
     },
   },
+
+  // Global CSS settings
   globalCss: {
+    // This is how you should handle the font import in Panda CSS
+    "@font-face": {
+      fontFamily: "Noto Sans JP",
+      src: "url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap')",
+    },
+    body: {
+      fontFamily: "Noto Sans JP, sans-serif",
+    },
     p: {
       color: "primary",
+      fontWeight: "400",
     }
   },
 

@@ -8,28 +8,29 @@ import Link from "next/link";
 
 const Home = () => {
   const section = css({
-    maxWidth: "900px",
+    maxWidth: "700px",
     margin: "15px auto",
     padding: "20px",
     display: "flex",
     flexDirection: "column",
-    alignItems: "center",
+    alignItems: "flex-start",
   });
 
   const sectionTitle = css({
     fontSize: "30px",
     color: "primary",
-		fontWeight: "bold",
+    fontWeight: "500",
     marginBottom: "10px",
+    display: "block",
+    margin: "0 auto",
   });
 
   const sectionText = css({
     fontSize: "18px",
     color: "primary",
     marginBottom: "10px",
+    lineHeight: "1.6",
   });
-
-  const blogList = getAllBlogs();
 
   return (
     <div>
@@ -65,11 +66,62 @@ const Home = () => {
             <br />
           </p>
         </section>
-        <section className={section}>
+        <section
+          className={css({
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            justifyContent: "center",
+						margin: "15px auto",
+						padding: "20px",
+          })}
+        >
           <h3 className={sectionTitle}>Works</h3>
-          <p className={sectionText}>現在制作中です。</p>
+          <div className={css({ display: "flex", gap: "20px" })}>
+            {getAllBlogs().map((blog) => (
+              <Card
+                key={blog.slug}
+                slug={blog.slug}
+                title={blog.title}
+                description={blog.description}
+                date={blog.date}
+              />
+            ))}
+          </div>
+          <Link
+            href="/works"
+            className={css({
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+            })}
+          >
+            <button
+              className={css({
+                backgroundColor: "background",
+                color: "primary",
+                border: "none",
+                fontWeight: "bold",
+								fontSize: "16px",
+                borderRadius: "5px",
+                padding: "10px 20px",
+                cursor: "pointer",
+              })}
+            >
+              See More
+            </button>
+          </Link>
         </section>
-        <section className={section}>
+        <section
+          className={css({
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            justifyContent: "center",
+						margin: "15px auto",
+						padding: "20px",
+          })}
+        >
           <h3 className={sectionTitle}>Blogs</h3>
           <div className={css({ display: "flex", gap: "20px" })}>
             {getAllBlogs().map((blog) => (
@@ -78,24 +130,33 @@ const Home = () => {
                 slug={blog.slug}
                 title={blog.title}
                 description={blog.description}
+                date={blog.date}
               />
             ))}
           </div>
-					<Link href="/blogs">
-						<button
-							className={css({
-								backgroundColor: "background",
-								color: "primary",
-								border: "none",
-								fontWeight: "bold",
-								borderRadius: "5px",
-								padding: "10px 20px",
-								cursor: "pointer",
-							})}
-						>
-							See More
-						</button>
-					</Link>
+          <Link
+            href="/blogs"
+            className={css({
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+            })}
+          >
+            <button
+              className={css({
+                backgroundColor: "background",
+                color: "primary",
+                border: "none",
+                fontWeight: "bold",
+								fontSize: "16px",
+                borderRadius: "5px",
+                padding: "10px 20px",
+                cursor: "pointer",
+              })}
+            >
+              See More
+            </button>
+          </Link>
         </section>
       </Container>
     </div>
