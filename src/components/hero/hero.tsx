@@ -1,48 +1,77 @@
 import { css } from "../../../styled-system/css";
 
 export const Hero = () => {
-  return (
-    <div
-      className={css({
-        backgroundColor: "primary",
-				width:"100vw",
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        color: "#dde6edf0",
-        fontSize: "30px",
+	const icon = css({
+		width: "100px",
+		height: "100px",
+		borderRadius: "50%",
+		marginRight: "20px",
+	});
+
+	const caption = css({
+		fontSize: "20px",
+		color: "accentLight",
+		marginBottom: "10px",
+		alignItems: "center",
+	});
+
+	const logo = css({
+		width: "30px",
+		height: "30px",
+		marginRight: "10px",
+	});
+
+	return (
+		<div
+			className={css({
+				backgroundColor: "primary",
+				width: "100vw",
+				display: "flex",
+				justifyContent: "center",
+				alignItems: "center",
+				color: "#dde6edf0",
+				fontSize: "30px",
 				height: "200px",
-      })}
-      id="home"
-    >
-      <section>
-        <h1
-          className={css({
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-          })}
-        >
-          nomanoma121
-        </h1>
-        <p
-          className={css({
-            color: "#526d82",
-            fontSize: "20px",
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-          })}
-        >
-          Web Developer
-        </p>
-      </section>
-			<section>
-				<p className={css({
-					color: "accentLight",
-					fontSize: "20px",
-				})}>Born on January 21, 2006 in Aichi</p>
-			</section>
-    </div>
-  );
+			})}
+			id="home"
+		>
+			<div
+				className={css({
+					display: "flex",
+					alignItems: "center",
+					justifyContent: "center",
+					marginRight: "100px",
+				})}
+			>
+				<img src="/images/icon.webp" alt="icon" className={icon} />
+				<div>
+					<h1
+						className={css({
+							fontSize: "30px",
+							color: "background",
+							// TODO: マイナスを使わないようにする
+							marginTop: "-15px",
+						})}
+					>
+						nomanoma121
+					</h1>
+					<div className={css({ display: "flex", marginTop: "10px" })}>
+						<img src="/images/github.svg" className={logo} />
+						<img src="/images/x.svg" className={logo} />
+					</div>
+				</div>
+			</div>
+			<div
+				className={css({
+					display: "flex",
+					flexDirection: "column",
+					alignItems: "center",
+					justifyContent: "center",
+				})}
+			>
+				<p className={caption}>Born on January 21, 2006 in Aichi</p>
+				<p className={caption}>Computer Science Student</p>
+			</div>
+		</div>
+	);
 };
