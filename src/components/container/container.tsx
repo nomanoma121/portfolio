@@ -1,4 +1,3 @@
-import React from "react";
 import { css } from "../../../styled-system/css";
 
 export const Container = ({ children }: { children: React.ReactNode }) => {

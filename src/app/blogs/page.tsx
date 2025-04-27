@@ -3,6 +3,7 @@ import { css } from "../../../styled-system/css";
 import { Header } from "../../components/header";
 import { Card } from "../../components/card/card";
 import { Container } from "@/src/components/container";
+import Link from "next/link";
 
 const Blogs = () => {
 	const blogList = getAllBlogs();

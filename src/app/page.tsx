@@ -5,10 +5,11 @@ import { Container } from "../components/container";
 import { getAllBlogs } from "../lib/blog";
 import { Card } from "../components/card/card";
 import Link from "next/link";
+import { Button } from "../components/button";
 
 const Home = () => {
   const section = css({
-    maxWidth: "700px",
+    maxWidth: "800px",
     margin: "15px auto",
     padding: "20px",
     display: "flex",
@@ -40,27 +41,36 @@ const Home = () => {
         <section className={section}>
           <h3 className={sectionTitle}>About me</h3>
           <p className={sectionText}>
-            2006年愛知生まれ。埼玉大学工学部情報工学科に在籍中。
+            埼玉大学工学部情報工学科2年生です。現在は埼玉に住んでいます。
             <br />
-            プログラミングを本格的に始めたのは大学に入学してからで、もうすぐ1年がになります。
             <br />
-            現在は大学のプログラミングサークルMaximumに所属しています。
+            高校のころに少しだけプログラミングをかじっていましたが、本格的に始めたのは大学に入ってからなので、プログラミング歴はだいたい1年くらいです。
             <br />
-            インフラ分野にも興味があるため、今後はそちらの分野にも挑戦していきたと考えています。
             <br />
-            競技プログラミングの方は全然できていませんが、これから挑戦していきたいと考えています。
+            大学ではプログラミングサークル
+            <a
+              href="https://maximum.vc"
+              className={css({ textDecoration: "underline", })}
+            >
+              Maximum
+            </a>
+            に所属しています。今年からは講師としても活動させていただいています。
+            <br />
+            <br />
+            今までは主にWeb開発を行っていましたが、最近はインフラ分野にも挑戦したいと思っており、たくさんのことを学んでいきたいと思っています。
           </p>
         </section>
         <section className={section}>
           <h3 className={sectionTitle}>Skills</h3>
           <p className={sectionText}>
-            主にWeb開発を行っているため、TypeScript,
+            主にWeb開発を行っており、TypeScript,
             Goなどをよく使用しています。
             <br />
-            また、フロントエンド、バックエンドの両方度経験があります。
+            個人開発ではありますが、フロントエンド、バックエンドの両方経験があります。フレームワークなどはフロントエンドではReact, Next.js、バックエンドだとEcho(Go)やHono(Node.js)を使用することが多いです。
             <br />
-            最近自分でPCを購入してUbuntu
-            Serverとして運用しているため、Linux・インフラの知識も少しあります。
+            <br />
+            最近自分でPCを購入して自宅サーバーとして運用するなどインフラ分野にも触れているため、LinuxやDockerの知識も少しあります。
+            <br />
             <br />
             サークルの方では共同開発も行っており、Gitを使用した開発も行っています。
             <br />
@@ -96,38 +106,7 @@ const Home = () => {
               alignItems: "center",
             })}
           >
-            <button
-              className={css({
-                color: "primary",
-                border: "none",
-                fontWeight: "bold",
-                borderRadius: "5px",
-                pt: "10px",
-                cursor: "pointer",
-                position: "relative", // Ensure 'before' is positioned correctly
-
-                // Pseudo-element before
-                "&:before": {
-                  content: '""',
-                  background: "primary",
-                  position: "absolute",
-                  left: "0",
-                  bottom: "0",
-                  width: "100%",
-                  height: "2px",
-                  transformOrigin: "center top",
-                  transform: "scale(0, 1)", // Initially not visible
-                  transition: "transform 0.3s",
-                },
-
-                // Hover effect on button
-                "&:hover:before": {
-                  transform: "scale(1, 1)", // Expands on hover
-                },
-              })}
-            >
-              See More
-            </button>
+            <Button>See More</Button>
           </Link>
         </section>
         <section
@@ -160,38 +139,7 @@ const Home = () => {
               alignItems: "center",
             })}
           >
-            <button
-              className={css({
-                color: "primary",
-                border: "none",
-                fontWeight: "bold",
-                borderRadius: "5px",
-                pt: "10px",
-                cursor: "pointer",
-                position: "relative", // Ensure 'before' is positioned correctly
-
-                // Pseudo-element before
-                "&:before": {
-                  content: '""',
-                  background: "primary",
-                  position: "absolute",
-                  left: "0",
-                  bottom: "0",
-                  width: "100%",
-                  height: "2px",
-                  transformOrigin: "center top",
-                  transform: "scale(0, 1)", // Initially not visible
-                  transition: "transform 0.3s",
-                },
-
-                // Hover effect on button
-                "&:hover:before": {
-                  transform: "scale(1, 1)", // Expands on hover
-                },
-              })}
-            >
-              See More
-            </button>
+            <Button>See More</Button>
           </Link>
         </section>
       </Container>

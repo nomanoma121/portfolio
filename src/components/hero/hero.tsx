@@ -58,10 +58,10 @@ export const Hero = () => {
 					</h1>
 					<div className={css({ display: "flex", marginTop: "10px" })}>
 						<Link href="https://github.com/nomanoma121" target="_blank">
-							<img src="/images/github.svg" className={logo} />
+							<img src="/images/github.svg" alt="github" className={logo} />
 						</Link>
 						<Link href="https://x.com/sobur1al" target="_blank">
-							<img src="/images/x.svg" className={logo} />
+							<img src="/images/x.svg" alt="github" className={logo} />
 						</Link>
 					</div>
 				</div>

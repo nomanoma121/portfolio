@@ -3,6 +3,8 @@ import type { Metadata } from "next";
 import { Header } from "../../../components/header";
 import { css } from "../../../../styled-system/css";
 import { Container } from "../../../components/container";
+import Link from "next/link";
+import { Button } from "../../../components/button";
 
 type Params = {
   slug: string;
@@ -36,6 +38,9 @@ export default async function BlogPage({ params }: { params: Params }) {
     <main className="prose mx-auto p-8">
       <Header />
       <Container>
+        <Link href="/blogs">
+          <Button>← Back</Button>
+        </Link>
         <h1
           className={css({
             fontSize: "30px",
@@ -55,7 +60,13 @@ export default async function BlogPage({ params }: { params: Params }) {
             lineHeight: "base",
             color: "gray.800",
             mt: "8",
-            "& h1": { fontSize: "2xl", fontWeight: "bold", my: "8", borderBottom: "2px solid", pb: "2" },
+            "& h1": {
+              fontSize: "2xl",
+              fontWeight: "bold",
+              my: "8",
+              borderBottom: "2px solid",
+              pb: "2",
+            },
             "& h2": { fontSize: "xl", fontWeight: "bold", my: "6" },
             "& p": { my: "4" },
             "& code": {
