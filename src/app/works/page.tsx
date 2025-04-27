@@ -1,8 +1,11 @@
 import { Container } from "@/src/components/container";
 import { css } from "../../../styled-system/css";
 import { Header } from "../../components/header";
+import { getAllWorks } from "../../lib/work";
+import { WorkCard } from "../../components/work-card/work-card";
 
 const Works = () => {
+	const works = getAllWorks();
 	return (
 		<>
 			<Header />
@@ -22,12 +25,24 @@ const Works = () => {
 				<div
 					className={css({
 						display: "flex",
-						alignItems: "center",
-						justifyContent: "center",
+						justifyContent: "flex-start", 
+						flexWrap: "wrap",
+						maxWidth: "1090px",
 						gap: "20px",
+						margin: "0 auto",
 					})}
 				>
-					{/* Add your works here */}
+					{works.map((work) => (
+						<WorkCard
+							key={work.slug}
+							slug={work.slug}
+							title={work.title}
+							description={work.description}
+							url={work.url}
+							date={work.date}
+							image={`/images/works/${work.slug}.png`}
+						/>
+					))}
 				</div>
 			</Container>
 		</>

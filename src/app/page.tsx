@@ -2,8 +2,10 @@ import { css } from "../../styled-system/css";
 import { Header } from "../components/header";
 import { Hero } from "../components/hero";
 import { Container } from "../components/container";
-import { getAllBlogs } from "../lib/blog";
+import { getRecentBlogs } from "../lib/blog";
+import { getRecentWorks } from "../lib/work";
 import { Card } from "../components/card/card";
+import { WorkCard } from "../components/work-card/work-card";
 import Link from "next/link";
 import { Button } from "../components/button";
 
@@ -43,6 +45,7 @@ const Home = () => {
 					<p className={sectionText}>
 						埼玉大学工学部情報工学科2年生です。現在は埼玉に住んでいます。
 						<br />
+						<br />
 						高校のころに少しだけプログラミングをかじっていましたが、本格的に始めたのは大学に入ってからなので、プログラミング歴はだいたい1年くらいです。
 						<br />
 						<br />
@@ -56,7 +59,7 @@ const Home = () => {
 						に所属しています。今年からは講師としても活動させていただいています。
 						<br />
 						<br />
-						今までは主にWeb開発を行っていましたが、最近はインフラ分野にも挑戦したいと思っており、たくさんのことを学んでいきたいと思っています。
+						今までは主にWeb開発を行っていましたが、最近はインフラ分野にも興味があり、少しずつ学んでいけたらと思っています。
 					</p>
 				</section>
 				<section className={section}>
@@ -87,13 +90,15 @@ const Home = () => {
 				>
 					<h3 className={sectionTitle}>Works</h3>
 					<div className={css({ display: "flex", gap: "20px" })}>
-						{getAllBlogs().map((blog) => (
-							<Card
-								key={blog.slug}
-								slug={blog.slug}
-								title={blog.title}
-								description={blog.description}
-								date={blog.date}
+						{getRecentWorks().map((work) => (
+							<WorkCard
+								key={work.slug}
+								slug={work.slug}
+								title={work.title}
+								description={work.description}
+								url={work.url}
+								date={work.date}
+								image={`/images/works/${work.slug}.png`}
 							/>
 						))}
 					</div>
@@ -114,13 +119,14 @@ const Home = () => {
 						flexDirection: "column",
 						alignItems: "center",
 						justifyContent: "center",
+						width: "720px",
 						margin: "15px auto",
 						padding: "20px",
 					})}
 				>
 					<h3 className={sectionTitle}>Blogs</h3>
 					<div className={css({ display: "flex", gap: "20px" })}>
-						{getAllBlogs().map((blog) => (
+						{getRecentBlogs().map((blog) => (
 							<Card
 								key={blog.slug}
 								slug={blog.slug}

@@ -1,4 +1,4 @@
-import fs from "fs";
+import fs from "node:fs";
 import path from "node:path";
 import matter from "gray-matter";
 import { remark } from "remark";
@@ -40,7 +40,7 @@ export async function getBlog(slug: string) {
 export function getAllBlogs() {
 	const fileNames = fs.readdirSync(blogsDirectory);
 
-	return fileNames.map((fileName) => {
+	const blogs = fileNames.map((fileName) => {
 		const slug = fileName.replace(/\.md$/, "");
 		const fullPath = path.join(blogsDirectory, fileName);
 		const fileContents = fs.readFileSync(fullPath, "utf8");
@@ -54,4 +54,17 @@ export function getAllBlogs() {
 			date: date,
 		};
 	});
+
+	return blogs.sort((a, b) => {
+		return new Date(b.date).getTime() - new Date(a.date).getTime();
+	});
 }
+
+export const getRecentBlogs = () => {
+	const blogs = getAllBlogs();
+	const recentBlogs = blogs.sort((a, b) => {
+		return new Date(b.date).getTime() - new Date(a.date).getTime();
+	});
+
+	return recentBlogs.slice(0, 2);
+};

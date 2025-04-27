@@ -13,7 +13,7 @@ export const Card = (content: CardProps) => {
 	return (
 		<div
 			className={css({
-				width: "400px",
+				width: "350px",
 				height: "200px",
 				borderRadius: "8px",
 				padding: "16px",
