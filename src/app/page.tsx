@@ -46,7 +46,7 @@ const Home = () => {
             埼玉大学工学部情報工学科2年生です。現在は埼玉に住んでいます。
           </p>
           <p className={sectionText}>
-            高校のころに少しだけプログラミングをかじっていましたが、本格的に始めたのは大学に入ってからなので、プログラミング歴はだいたい1年くらいです。
+            高校のころに少しだけプログラミングを触ったことはありましたが、本格的に始めたのは大学に入ってからなので、プログラミング歴はだいたい1年くらいです。
           </p>
           <p className={sectionText}>
             大学ではプログラミングサークル
@@ -69,7 +69,8 @@ const Home = () => {
           </p>
           <p className={sectionText}>
             {" "}
-            個人開発ではありますが、フロントエンド、バックエンドの両方経験があります。フレームワークなどはフロントエンドではReact、バックエンドだと Echo ( Go ) や Hono.js ( Node.js ) を使用することが多いです。
+            個人開発ではありますが、フロントエンド、バックエンドの両方経験があります。フレームワークなどはフロントエンドではReact、バックエンドだと
+            Echo ( Go ) や Hono.js ( Node.js ) を使用することが多いです。
           </p>
           <p className={sectionText}>
             最近はPCを購入して自宅サーバーとして運用するなどインフラ分野にも挑戦しており、LinuxやDockerに関する基礎的な知識も身につけています。
@@ -90,7 +91,12 @@ const Home = () => {
         >
           <h3 className={sectionTitle}>Works</h3>
           <div
-            className={css({ display: "flex", gap: "20px", flexWrap: "wrap" })}
+            className={css({
+              display: "flex",
+              gap: "20px",
+              flexWrap: "wrap",
+              mt: "10px",
+            })}
           >
             {getRecentWorks().map((work) => (
               <WorkCard
@@ -132,8 +138,10 @@ const Home = () => {
               display: "flex",
               gap: "20px",
               flexWrap: "wrap",
+							justifyContent: "center", // TODO: これを消す
               width: "720px",
               margin: "0 auto",
+              mt: "10px",
             })}
           >
             {getRecentBlogs().map((blog) => (

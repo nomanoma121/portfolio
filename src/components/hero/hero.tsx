@@ -26,11 +26,9 @@ export const Hero = () => {
 		<div
 			className={css({
 				backgroundColor: "primary",
-				width: "100vw",
 				display: "flex",
 				justifyContent: "center",
 				alignItems: "center",
-				color: "#dde6edf0",
 				fontSize: "30px",
 				height: "200px",
 			})}
