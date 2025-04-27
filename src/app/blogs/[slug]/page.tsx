@@ -61,6 +61,7 @@ export default async function BlogPage({ params }: { params: Params }) {
             "& code": {
               borderRadius: "md",
               fontSize: "sm",
+              backgroundColor: "",
             },
             "& a": { color: "blue.500", textDecoration: "underline" },
           })}

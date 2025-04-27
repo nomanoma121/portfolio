@@ -18,7 +18,7 @@ export const Card = (content: CardProps) => {
         padding: "16px",
         margin: "16px 0",
         backgroundColor: "background",
-        boxShadow: "0 2px 4px rgba(0, 0, 0, 0.3)",
+        boxShadow: "0 2px 4px rgba(0, 0, 0, 0.5)",
       })}
     >
       <span
@@ -59,14 +59,35 @@ export const Card = (content: CardProps) => {
           alignItems: "center",
         })}
       >
+        {/* biome-ignore lint/a11y/useButtonType: <explanation> */}
         <button
           className={css({
             color: "primary",
             border: "none",
             fontWeight: "bold",
             borderRadius: "5px",
-            padding: "10px 20px",
+            pt: "10px",
             cursor: "pointer",
+            position: "relative", // Ensure 'before' is positioned correctly
+
+            // Pseudo-element before
+            "&:before": {
+              content: '""',
+              background: "primary",
+              position: "absolute",
+              left: "0",
+              bottom: "0",
+              width: "100%",
+              height: "2px",
+              transformOrigin: "center top",
+              transform: "scale(0, 1)", // Initially not visible
+              transition: "transform 0.3s",
+            },
+
+            // Hover effect on button
+            "&:hover:before": {
+              transform: "scale(1, 1)", // Expands on hover
+            },
           })}
         >
           Read More

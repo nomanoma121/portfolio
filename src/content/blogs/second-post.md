@@ -36,6 +36,10 @@ JavaScriptに慣れた頃、次に出会ったのは**TypeScript**です。
 最初はNode.jsでAPIサーバーを作ってみました。
 その後、さらに高速なバックエンドを求めて**Go言語**にも挑戦。
 型が強く、シンプルなGoの書き味がとても気に入りました。
+これはどうだ！！ `cout << "Hello, World!!" << endl`
+
+[これはリンクです](https://github.com/nomanoma121)
+
 
 ```go
 package main

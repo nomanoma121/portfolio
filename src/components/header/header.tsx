@@ -17,7 +17,7 @@ export const Header = () => {
 			left: 0,
 			bottom: 0,
 			margin: "auto",
-			transformOrigin: "right top",
+			transformOrigin: "center top",
 			transform: "scale(0, 1)",
 			transition: "transform 0.3s",
 		},

@@ -72,8 +72,8 @@ const Home = () => {
             flexDirection: "column",
             alignItems: "center",
             justifyContent: "center",
-						margin: "15px auto",
-						padding: "20px",
+            margin: "15px auto",
+            padding: "20px",
           })}
         >
           <h3 className={sectionTitle}>Works</h3>
@@ -98,14 +98,32 @@ const Home = () => {
           >
             <button
               className={css({
-                backgroundColor: "background",
                 color: "primary",
                 border: "none",
                 fontWeight: "bold",
-								fontSize: "16px",
                 borderRadius: "5px",
-                padding: "10px 20px",
+                pt: "10px",
                 cursor: "pointer",
+                position: "relative", // Ensure 'before' is positioned correctly
+
+                // Pseudo-element before
+                "&:before": {
+                  content: '""',
+                  background: "primary",
+                  position: "absolute",
+                  left: "0",
+                  bottom: "0",
+                  width: "100%",
+                  height: "2px",
+                  transformOrigin: "center top",
+                  transform: "scale(0, 1)", // Initially not visible
+                  transition: "transform 0.3s",
+                },
+
+                // Hover effect on button
+                "&:hover:before": {
+                  transform: "scale(1, 1)", // Expands on hover
+                },
               })}
             >
               See More
@@ -118,8 +136,8 @@ const Home = () => {
             flexDirection: "column",
             alignItems: "center",
             justifyContent: "center",
-						margin: "15px auto",
-						padding: "20px",
+            margin: "15px auto",
+            padding: "20px",
           })}
         >
           <h3 className={sectionTitle}>Blogs</h3>
@@ -144,14 +162,32 @@ const Home = () => {
           >
             <button
               className={css({
-                backgroundColor: "background",
                 color: "primary",
                 border: "none",
                 fontWeight: "bold",
-								fontSize: "16px",
                 borderRadius: "5px",
-                padding: "10px 20px",
+                pt: "10px",
                 cursor: "pointer",
+                position: "relative", // Ensure 'before' is positioned correctly
+
+                // Pseudo-element before
+                "&:before": {
+                  content: '""',
+                  background: "primary",
+                  position: "absolute",
+                  left: "0",
+                  bottom: "0",
+                  width: "100%",
+                  height: "2px",
+                  transformOrigin: "center top",
+                  transform: "scale(0, 1)", // Initially not visible
+                  transition: "transform 0.3s",
+                },
+
+                // Hover effect on button
+                "&:hover:before": {
+                  transform: "scale(1, 1)", // Expands on hover
+                },
               })}
             >
               See More
