@@ -18,7 +18,7 @@ export const WorkCard = (content: WorkCardProps) => {
           width: "350px",
           height: "280px",
           borderRadius: "8px",
-          backgroundColor: "background",
+          boxShadow: "0 2px 4px rgba(0, 0, 0, 0.2)",
         })}
       >
         <img
@@ -36,16 +36,23 @@ export const WorkCard = (content: WorkCardProps) => {
             fontSize: "18x",
             fontWeight: "bold",
             color: "text",
+            padding: "0px 10px",
+            mt: "5px",
           })}
         >
           {content.title}
         </h2>
         <div
           className={css({
-            height: "70px",
+            height: "50px",
+            padding: "0 10px",
           })}
         >
-          <p>{content.description}</p>
+          <p className={css({
+            fontSize: "14px",
+            color: "accent",
+            fontWeight: "500",
+          })}>{content.description}</p>
         </div>
       </div>
     </Link>

@@ -61,13 +61,13 @@ export default async function BlogPage({ params }: { params: Params }) {
 						color: "gray.800",
 						mt: "8",
 						"& h1": {
-							fontSize: "2xl",
+							fontSize: "xl",
 							fontWeight: "bold",
 							my: "8",
 							borderBottom: "2px solid",
 							pb: "2",
 						},
-						"& h2": { fontSize: "xl", fontWeight: "bold", my: "6" },
+						"& h2": { fontSize: "lg", fontWeight: "bold" },
 						"& p": { my: "4" },
 						"& code": {
 							borderRadius: "md",
