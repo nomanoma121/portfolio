@@ -3,7 +3,6 @@ import { css } from "../../../styled-system/css";
 import { Header } from "../../components/header";
 import { Card } from "../../components/card/card";
 import { Container } from "@/src/components/container";
-import Link from "next/link";
 
 const Blogs = () => {
 	const blogList = getAllBlogs();
@@ -11,14 +10,18 @@ const Blogs = () => {
 		<>
 			<Header />
 			<Container>
-				<h1 className={css({
-					fontSize: "30px",
-					fontWeight: "500",
-					color: "primary",
-					marginBottom: "20px",
-					display: "block",
-					textAlign: "center",
-				})}>Blogs</h1>
+				<h1
+					className={css({
+						fontSize: "30px",
+						fontWeight: "500",
+						color: "primary",
+						marginBottom: "20px",
+						display: "block",
+						textAlign: "center",
+					})}
+				>
+					Blogs
+				</h1>
 				<div
 					className={css({
 						display: "flex",
