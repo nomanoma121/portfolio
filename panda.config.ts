@@ -37,7 +37,7 @@ export default defineConfig({
     p: {
       color: "primary",
       fontWeight: "400",
-    }
+    },
   },
 
   // The output directory for your css system

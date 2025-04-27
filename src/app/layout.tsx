@@ -2,6 +2,7 @@ import "./globals.css";
 import { css } from "../../styled-system/css";
 import type { Metadata } from "next";
 import { Footer } from "../components/footer";
+import "highlight.js/styles/github-dark-dimmed.css";
 
 // const geistSans = localFont({
 // 	src: './fonts/GeistVF.woff',
