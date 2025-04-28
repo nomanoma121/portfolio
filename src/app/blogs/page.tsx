@@ -1,7 +1,7 @@
 import { getAllBlogs } from "@/src/lib/blog";
 import { css } from "../../../styled-system/css";
 import { Header } from "../../components/header";
-import { Card } from "../../components/card/card";
+import { BlogCard } from "../../components/blog-card";
 import { Container } from "@/src/components/container";
 
 const Blogs = () => {
@@ -34,7 +34,7 @@ const Blogs = () => {
 					})}
 				>
 					{blogList.map((blog) => (
-						<Card
+						<BlogCard
 							key={blog.slug}
 							slug={blog.slug}
 							title={blog.title}

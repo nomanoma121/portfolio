@@ -4,8 +4,8 @@ import { Hero } from "../components/hero";
 import { Container } from "../components/container";
 import { getRecentBlogs } from "../lib/blog";
 import { getRecentWorks } from "../lib/work";
-import { Card } from "../components/card/card";
-import { WorkCard } from "../components/work-card/work-card";
+import { BlogCard } from "../components/card/blog-card";
+import { WorkCard } from "../components/card/work-card/work-card";
 import Link from "next/link";
 import { Button } from "../components/button";
 
@@ -145,7 +145,7 @@ const Home = () => {
 						})}
 					>
 						{getRecentBlogs().map((blog) => (
-							<Card
+							<BlogCard
 								key={blog.slug}
 								slug={blog.slug}
 								title={blog.title}

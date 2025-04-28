@@ -1,6 +1,6 @@
 import Link from "next/link";
-import { css } from "../../../styled-system/css";
-import { Button } from "../../components/button";
+import { css } from "../../../../styled-system/css";
+import { Button } from "../../../components/button";
 
 type CardProps = {
 	slug: string;
@@ -9,7 +9,7 @@ type CardProps = {
 	date: string;
 };
 
-export const Card = (content: CardProps) => {
+export const BlogCard = (content: CardProps) => {
 	return (
 		<div
 			className={css({
