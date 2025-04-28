@@ -6,7 +6,7 @@ import "highlight.js/styles/github-dark-dimmed.css";
 
 export const metadata: Metadata = {
 	title: "nomanoma121",
-	description: "This is my portfolio site.",
+	description: "This is nomanoma121's portfolio site.",
 };
 
 export default function RootLayout({
