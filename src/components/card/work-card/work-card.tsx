@@ -15,8 +15,8 @@ export const WorkCard = (content: WorkCardProps) => {
 		<Link href={content.url}>
 			<div
 				className={css({
-					width: "350px",
-					height: "280px",
+					width: { base: "100%", md: "350px" },
+					height: { base: "auto", md: "280px" },
 					borderRadius: "8px",
 					boxShadow: "0 2px 4px rgba(0, 0, 0, 0.2)",
 				})}
@@ -26,9 +26,12 @@ export const WorkCard = (content: WorkCardProps) => {
 					alt={content.title}
 					className={css({
 						width: "100%",
-						height: "200px",
+						minWidth: "100%",
+						height: { base: "auto", md: "200px" },
+						aspectRatio: "7/4",
 						borderRadius: "8px",
 						objectFit: "cover",
+						objectPosition: "center",
 					})}
 				/>
 				<h2

@@ -21,6 +21,10 @@ export default defineConfig({
           accent: { value: "#526D82" },
         },
       },
+      breakpoints: {
+        xl: "1150px",
+        md: "780px",
+      }
     },
   },
 

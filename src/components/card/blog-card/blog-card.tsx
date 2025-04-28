@@ -13,8 +13,8 @@ export const BlogCard = (content: CardProps) => {
 	return (
 		<div
 			className={css({
-				width: "350px",
-				height: "180px",
+				width: { base: "100%", md: "350px" },
+				maxHeight: "180px",
 				borderRadius: "8px",
 				padding: "16px",
 				backgroundColor: "background",

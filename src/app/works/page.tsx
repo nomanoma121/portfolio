@@ -36,9 +36,9 @@ const Works = () => {
 				<div
 					className={css({
 						display: "flex",
-						justifyContent: "flex-start",
+						justifyContent: { base: "center", md: "flex-start" },
 						flexWrap: "wrap",
-						maxWidth: "1090px",
+						maxWidth: { md: "720px", xl: "1090px" },
 						gap: "20px",
 						margin: "0 auto",
 					})}

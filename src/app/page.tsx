@@ -96,6 +96,7 @@ const Home = () => {
 							gap: "20px",
 							flexWrap: "wrap",
 							mt: "10px",
+							width: { base: "100%", md: "720px" },
 						})}
 					>
 						{getRecentWorks().map((work) => (
@@ -139,7 +140,7 @@ const Home = () => {
 							gap: "20px",
 							flexWrap: "wrap",
 							justifyContent: "center", // TODO: これを消す
-							width: "720px",
+							maxWidth: "720px",
 							margin: "0 auto",
 							mt: "10px",
 						})}

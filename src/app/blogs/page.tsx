@@ -26,9 +26,9 @@ const Blogs = () => {
 					className={css({
 						display: "flex",
 						alignItems: "center",
-						justifyContent: "flex-start",
+						justifyContent: { base: "center", md: "flex-start" },
 						gap: "20px",
-						maxWidth: "1090px",
+						maxWidth: { md: "720px", xl: "1090px" },
 						flexWrap: "wrap",
 						margin: "0 auto",
 					})}
