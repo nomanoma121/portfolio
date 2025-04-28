@@ -14,7 +14,7 @@ export const BlogCard = (content: CardProps) => {
 		<div
 			className={css({
 				width: { base: "100%", md: "350px" },
-				maxHeight: "180px",
+				height: { base: "auto", md: "180px" },
 				borderRadius: "8px",
 				padding: "16px",
 				backgroundColor: "background",
