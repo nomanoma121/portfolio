@@ -2,7 +2,7 @@ import { Container } from "@/src/components/container";
 import { css } from "../../../styled-system/css";
 import { Header } from "../../components/header";
 import { getAllWorks } from "../../lib/work";
-import { WorkCard } from "../../components/work-card/work-card";
+import { WorkCard } from "../../components/card/work-card";
 
 const Works = () => {
 	const works = getAllWorks();

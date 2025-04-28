@@ -1,7 +1,7 @@
 import { getAllBlogs } from "@/src/lib/blog";
 import { css } from "../../../styled-system/css";
 import { Header } from "../../components/header";
-import { BlogCard } from "../../components/blog-card";
+import { BlogCard } from "../../components/card/blog-card";
 import { Container } from "@/src/components/container";
 
 const Blogs = () => {
