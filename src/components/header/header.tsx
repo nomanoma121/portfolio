@@ -44,7 +44,7 @@ export const Header = () => {
 				alignItems: "center",
 				zIndex: 10,
 				margin: 0,
-				// boxShadow: "0 4px 6px rgba(0, 0, 0, 0.3)",
+				boxShadow: "0 4px 6px -2px rgba(0, 0, 0, 0.3)",
 			})}
 		>
 			<ul
