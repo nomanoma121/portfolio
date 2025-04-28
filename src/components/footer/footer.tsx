@@ -12,7 +12,7 @@ export const Footer = ({ className }: { className?: string }) => {
         className
       )}
     >
-      <p>© 2025 all right reserved</p>
+      <p>© 2025 nomanoma121 All Right Reserved</p>
     </footer>
   );
 };
