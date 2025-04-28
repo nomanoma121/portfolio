@@ -140,7 +140,7 @@ const Home = () => {
 							gap: "20px",
 							flexWrap: "wrap",
 							justifyContent: "center", // TODO: これを消す
-							maxWidth: "720px",
+							width: { base: "100%", md: "720px" },
 							margin: "0 auto",
 							mt: "10px",
 						})}
