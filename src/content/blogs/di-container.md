@@ -15,7 +15,7 @@ DI(Dependency Injection)については割愛します。
 
 ## DIコンテナとは
 
-DIコンテナは、クラスの依存関係を管理し、インスタンス化するときにいい感じに必要なクラスを注入してくれる仕組みです。これにより、依存関係が複雑な場合でも、手動で依存関係を解決する必要がなくなります。
+DIコンテナは、クラスの依存関係を管理し、インスタンス化するときに自動的に適切な依存関係を注入してくれる仕組みです。これにより、依存関係が複雑な場合でも、手動で依存関係を解決する必要がなくなります。
 
 ### DIコンテナを使わない場合
 
@@ -96,7 +96,7 @@ class PostRepository implements IPostRepository {
 
 @injectable()
 class PostService {
-    constructor(private postRepository: IPostRepository) {}
+    constructor(@inject('IPostRepository') private postRepository: IPostRepository) {}
 
     getAllPosts(): string[] {
         return this.postRepository.findAll();
