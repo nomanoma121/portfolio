@@ -201,7 +201,7 @@ container.register("Repo", {
 
 const postRepository = container.resolve("Repo"); // Tokenを使っても同じインスタンスが取得できる
 
-const postService = container.resolve("PostService");
+const postService = container.resolve(PostService);
 postService.createPost("Hello, DI with Factory!");
 postService.createPost("Hello, DI with Token!");
 
