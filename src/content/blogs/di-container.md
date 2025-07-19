@@ -4,7 +4,7 @@ description: DIコンテナを使ってみた感想や学びをまとめます�
 date: 2025-07-19
 ---
 
-## はじめに
+# はじめに
 
 最近DIコンテナというものがあると知ったので、実際に使ってみて学んだことや感想をまとめていきたいと思います。
 
@@ -13,15 +13,17 @@ DI(Dependency Injection)については割愛します。
 実装したリポジトリはこちらです  
 [nomanoma121/di-container-tutorial](https://github.com/nomanoma121/di-container-tutorial)
 
-## DIコンテナとは
+# DIコンテナとは
 
 DIコンテナは、クラスの依存関係を管理し、インスタンス化するときに自動的に適切な依存関係を注入してくれる仕組みです。これにより、依存関係が複雑な場合でも、手動で依存関係を解決する必要がなくなります。
 
-### DIコンテナを使わない場合
+## DIコンテナを使わない場合
 
 たとえば以下のような簡易的な投稿サービスを考えてみます。この例だと`PostService`に`PostRepository`を注入しています。
 
 ```typescript
+// importなどは省略しています
+
 interface IPostRepository {
     findAll(): string[];
     add(post: string): void;
@@ -68,13 +70,12 @@ console.log(postService.getAllPosts()); // ['Hello, DI!', 'Hello, TypeScript!']
 
 これから紹介するDIコンテナを使うと、依存関係を自動的に解決してくれるので、コードがすっきりします。
 
-### DIコンテナの実装
+## DIコンテナの実装
 
 さっきのコードをDIコンテナを使って書き直してみます。今回は[tsyringe](https://github.com/microsoft/tsyringe)というDIコンテナライブラリを使います。tsyringeはTypeScriptで書かれた軽量なDIコンテナで、デコレーターを使って依存関係を定義できます。
 
 ```typescript
-import 'reflect-metadata';
-import { container, injectable } from 'tsyringe';
+// importなどは省略しています
 
 interface IPostRepository {
     findAll(): string[];
@@ -82,7 +83,7 @@ interface IPostRepository {
 }
 
 @injectable()
-class PostRepository implements IPostRepository {
+class InMemoryRepository implements IPostRepository {
     private posts: string[] = [];
 
     findAll(): string[] {
@@ -107,9 +108,8 @@ class PostService {
     }
 }
 
-// DIコンテナに依存関係を登録
-container.register<IPostRepository>('IPostRepository', { useClass: PostRepository });
-container.register<PostService>('PostService', { useClass: PostService });
+// DIコンテナに依存関係を登録 
+container.register<IPostRepository>('IPostRepository', { useClass: InMemoryRepository });
 
 // DIコンテナからインスタンスを取得
 const postService = container.resolve<PostService>('PostService');
@@ -120,7 +120,7 @@ console.log(postService.getAllPosts()); // ['Hello, DI!']
 
 `@injectable()`と`@inject()`とあるのはTypeScriptのデコレータと呼ばれるもので、クラスやメソッドにメタデータを追加するための機能です。`@injectable()`で依存関係になりうるクラスに印をつけておき、`@inject()`で注入するクラスを指定します。TypeScriptでは実行時に型情報が失われるため、明示的に依存先を指定する必要があります。(具象クラスを型としている場合は実行時に失われないため省略できます)
 
-また、メタデータを扱うために、reflect-metadataというライブラリを使用しています。これを使うことで、TypeScriptのコンパイル時に生成された型情報（例：コンストラクタ引数の型など）を実行時に取得できるようになります。
+また、メタデータを扱うために、`reflect-metadata`というライブラリを使用しています。これを使うことで、TypeScriptのコンパイル時に生成された型情報（例：コンストラクタ引数の型など）を実行時に取得できるようになります。
 これにより、@injectable() や @inject() などのデコレーターを使って、依存関係を解決するための情報（メタデータ）をDIコンテナが利用できるようになります。
 
 今回のようにデコレータを使う場合、`tsconfig.json`に以下のオプションを追加する必要があります。
@@ -134,13 +134,14 @@ console.log(postService.getAllPosts()); // ['Hello, DI!']
 }
 ```
 
-内部でどのようなことをやっているのかを簡単に説明すると、まず`container.register()`で依存関係を登録します。ここでは`IPostRepository`と`PostService`を登録しています。次に、`container.resolve()`で使いたいクラスをインスタンス化します。このときに、`@inject()`でこのクラスをインスタンス化するのに必要なクラスを、`@injectable()`で印をつけたクラスから必要なクラスを探すことで、このクラスに必要なクラスを自動でインスタンス化して渡します。このインスタンス化する際にも内部でresolveのような処理を行い、再帰的に必要なインスタンスを生成し、依存関係を解決してくれます。
+内部でどのようなことをやっているのかを簡単に説明すると、まずcontainer.register()で依存関係を登録します。ここではIPostRepositoryというインターフェース（役割）に、InMemoryRepositoryという具体的なクラス（実装）を結びつけています。
+次に、`container.resolve()`で使いたいクラスをインスタンス化します。このときに、`@inject()`でこのクラスをインスタンス化するのに必要なクラスを、`@injectable()`で印をつけたクラスから必要なクラスを探すことで、このクラスに必要なクラスを自動でインスタンス化して渡します。このインスタンス化する際にも内部でresolveのような処理を行い、再帰的に必要なインスタンスを生成し、依存関係を解決してくれます。
 
 以下の記事にあるDIコンテナの仕組みの説明がすごくわかりやすかったので、詳しくはそちらを参照してください。この記事では`tsyringe`ではなく、`InversifyJS`を使って解説していますが、基本的な考え方は同じです。
 
 - [TypeScriptによるDependency Injection入門：DIコンテナを自作して内部構造を理解する](https://zenn.dev/spacemarket/articles/8ddba858aa09c2)
 
-## DIコンテナを使うメリット
+# DIコンテナを使うメリット
 
 DIコンテナを使うことで、以下のようなメリットがあります。
 
@@ -148,7 +149,7 @@ DIコンテナを使うことで、以下のようなメリットがあります
 - **テストが容易**: 依存関係をモックやスタブに置き換えることで、ユニットテストが容易になります。
 - **コードの再利用性が向上**: 依存関係を注入することで、コードの再利用性が向上します。異なる実装を簡単に切り替えるため、柔軟な設計が可能です。
 
-## useFactoryやuseToken
+# useFactoryやuseToken
 
 DIコンテナでは、依存関係を登録する際に`useFactory`や`useToken`といったオプションを使うことができます。これらは、依存関係の解決方法をカスタマイズするために使用されます。
 
@@ -197,15 +198,19 @@ container.register("Repo", {
   useToken: "IPostRepository",
 });
 
-const postService = container.resolve<PostService>("PostService");
+
+const postRepository = container.resolve("Repo"); // Tokenを使っても同じインスタンスが取得できる
+
+const postService = container.resolve("PostService");
 postService.createPost("Hello, DI with Factory!");
 postService.createPost("Hello, DI with Token!");
-console.log(postService.getAllPosts());
+
+console.log(postService.getAllPosts()); // ['Hello, DI with Factory!', 'Hello, DI with Token!']
 ```
 
 このコードでは、`PostService`のコンストラクタに`@inject()`デコレーターを使って、`IPostRepository`と`CONFIG`を注入しています。`CONFIG`は環境変数などの設定情報を注入するために、`useFactory`を使って生成しています。また、`Repo`というトークンを使って、実際には`IPostRepository`を参照するようにしています。
 
-## まとめ
+# まとめ
 
 今回はDIコンテナを使って依存関係を解決する方法を学びました。DIコンテナを使うことで複雑なコードだととても強力な手法ということはなんとなく感じることができました。まだまだOOPでの開発経験は少ないのですが、DIコンテナに触れてみて少しOOPの理解が深まったように感じます。
 
