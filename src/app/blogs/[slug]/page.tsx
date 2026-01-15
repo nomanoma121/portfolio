@@ -76,7 +76,7 @@ export default async function BlogPage({ params }: { params: Params }) {
 						<time className={css({ fontSize: "sm", color: "muted-foreground", fontFamily: "mono" })}>
 							{blog.date}
 						</time>
-						<h1 className={css({ fontSize: "4xl", fontWeight: "bold", marginTop: "4", marginBottom: "6", color: "foreground" })}>
+						<h1 className={css({ fontSize: "2xl", fontWeight: "bold", marginTop: "4", marginBottom: "6", color: "foreground" })}>
 							{blog.title}
 						</h1>
 					</header>
@@ -86,7 +86,7 @@ export default async function BlogPage({ params }: { params: Params }) {
 							maxWidth: "none",
 							color: "foreground",
 							"& h1": {
-								fontSize: "4xl",
+								fontSize: "2xl",
 								fontWeight: "bold",
 								marginTop: "8",
 								marginBottom: "6",
@@ -96,7 +96,7 @@ export default async function BlogPage({ params }: { params: Params }) {
 								paddingBottom: "4",
 							},
 							"& h2": {
-								fontSize: "3xl",
+								fontSize: "xl",
 								fontWeight: "bold",
 								marginTop: "8",
 								marginBottom: "4",
@@ -106,14 +106,14 @@ export default async function BlogPage({ params }: { params: Params }) {
 								paddingLeft: "4",
 							},
 							"& h3": {
-								fontSize: "2xl",
+								fontSize: "lg",
 								fontWeight: "semibold",
 								marginTop: "6",
 								marginBottom: "3",
 								color: "foreground",
 							},
 							"& h4": {
-								fontSize: "xl",
+								fontSize: "lg",
 								fontWeight: "semibold",
 								marginTop: "4",
 								marginBottom: "2",
@@ -134,9 +134,17 @@ export default async function BlogPage({ params }: { params: Params }) {
 								marginBottom: "4",
 								paddingLeft: "6",
 								color: "muted-foreground",
+								listStylePosition: "outside",
+							},
+							"& ul": {
+								listStyleType: "disc",
+							},
+							"& ol": {
+								listStyleType: "decimal",
 							},
 							"& li": {
 								marginBottom: "2",
+								paddingLeft: "2",
 							},
 							"& code": {
 								backgroundColor: "muted",
