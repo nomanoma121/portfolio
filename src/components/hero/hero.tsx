@@ -11,7 +11,7 @@ export const Hero = () => {
 
 	const caption = css({
 		fontSize: "20px",
-		color: "accentLight",
+		color: "primary-foreground",
 		marginBottom: "10px",
 		alignItems: "center",
 	});
@@ -31,9 +31,6 @@ export const Hero = () => {
 				alignItems: "center",
 				fontSize: "30px",
 				height: "200px",
-				flexWrap: "wrap",
-				flexDirection: { base: "column", md: "row" },
-				gap: { base: 0, md: "100px" },
 			})}
 			id="home"
 		>
@@ -42,6 +39,7 @@ export const Hero = () => {
 					display: "flex",
 					alignItems: "center",
 					justifyContent: "center",
+					marginRight: "100px",
 				})}
 			>
 				<img src="/images/icon.webp" alt="icon" className={icon} />
@@ -49,7 +47,7 @@ export const Hero = () => {
 					<h1
 						className={css({
 							fontSize: "30px",
-							color: "background",
+							color: "primary-foreground",
 							// TODO: マイナスを使わないようにする
 							marginTop: "-15px",
 						})}
@@ -74,17 +72,8 @@ export const Hero = () => {
 					justifyContent: "center",
 				})}
 			>
-				<div
-					className={css({
-						display: "flex",
-						alignItems: "center",
-						justifyContent: "center",
-						flexDirection: "column",
-					})}
-				>
-					<p className={caption}>Born on January 21, 2006 in Aichi</p>
-					<p className={caption}>Computer Science Student</p>
-				</div>
+				<p className={caption}>Born on January 21, 2006 in Aichi</p>
+				<p className={caption}>Computer Science Student</p>
 			</div>
 		</div>
 	);

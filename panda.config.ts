@@ -33,16 +33,22 @@ export default defineConfig({
     extend: {
       tokens: {
         colors: {
-          // OKLCh色空間でのカラートークン（ライトモードがベース）
-          background: { value: "oklch(0.95 0.005 240)" },
-          foreground: { value: "oklch(0.25 0.015 240)" },
-          primary: { value: "oklch(0.38 0.04 235)" },
-          "primary-foreground": { value: "oklch(0.98 0.005 240)" },
-          secondary: { value: "oklch(0.5 0.03 240)" },
-          muted: { value: "oklch(0.87 0.008 240)" },
-          "muted-foreground": { value: "oklch(0.48 0.015 240)" },
-          border: { value: "oklch(0.83 0.01 240)" },
-          accent: { value: "oklch(0.45 0.035 240)" },
+          // ヘッダーの色 #27374d をベースにしたカラートークン
+          base: {
+            background: { value: "#f5f5f5" },
+            foreground: { value: "#27374d" },
+            primary: { value: "#27374d" },
+            "primary-foreground": { value: "#ffffff" },
+            secondary: { value: "#526D82" },
+            muted: { value: "#DDE6ED" },
+            "muted-foreground": { value: "#526D82" },
+            border: { value: "#9DB2BF" },
+            accent: { value: "#27374d" },
+          },
+          black: {
+            a6: { value: "rgba(0, 0, 0, 0.06)" },
+            a8: { value: "rgba(0, 0, 0, 0.08)" },
+          }
         },
 
         durations: durations,
@@ -63,67 +69,67 @@ export default defineConfig({
 
       semanticTokens: {
         colors: {
-          // 新デザイン用のセマンティックトークン（ダークモード対応）
+          // ダークモード対応
           background: {
             value: {
-              _light: "{colors.background}",
-              _dark: "oklch(0.17 0.015 240)"
+              _light: "{colors.base.background}",
+              _dark: "#1a1a1a"
             }
           },
 
           foreground: {
             value: {
-              _light: "{colors.foreground}",
-              _dark: "oklch(0.94 0.008 240)"
+              _light: "{colors.base.foreground}",
+              _dark: "#DDE6ED"
             }
           },
 
           primary: {
             value: {
-              _light: "{colors.primary}",
-              _dark: "oklch(0.45 0.045 235)"
+              _light: "{colors.base.primary}",
+              _dark: "#526D82"
             }
           },
 
           "primary-foreground": {
             value: {
-              _light: "{colors.primary-foreground}",
-              _dark: "{colors.primary-foreground}"
+              _light: "{colors.base.primary-foreground}",
+              _dark: "{colors.base.primary-foreground}"
             }
           },
 
           secondary: {
             value: {
-              _light: "{colors.secondary}",
-              _dark: "{colors.secondary}"
+              _light: "{colors.base.secondary}",
+              _dark: "{colors.base.secondary}"
             }
           },
 
           muted: {
             value: {
-              _light: "{colors.muted}",
-              _dark: "oklch(0.25 0.02 240)"
+              _light: "{colors.base.muted}",
+              _dark: "#27374d"
             }
           },
 
           "muted-foreground": {
             value: {
-              _light: "{colors.muted-foreground}",
-              _dark: "oklch(0.6 0.015 240)"
+              _light: "{colors.base.muted-foreground}",
+              _dark: "#9DB2BF"
             }
           },
 
           border: {
             value: {
-              _light: "{colors.border}",
-              _dark: "oklch(0.28 0.025 240)"
+              _light: "{colors.base.border}",
+              _dark: "#27374d"
             }
           },
 
           accent: {
             value: {
-              _light: "{colors.accent}",
-              _dark: "{colors.accent}"
+              _light: "{colors.base.accent}",
+              _dark: "{colors.base.accent}"
             }
           },
 

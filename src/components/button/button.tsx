@@ -12,7 +12,7 @@ export const Button = ({ children, className, ...props }: ButtonProps) => {
 			type="button"
 			className={
 				css({
-					color: "primary",
+					color: "foreground",
 					border: "none",
 					fontWeight: "bold",
 					borderRadius: "5px",
@@ -23,7 +23,7 @@ export const Button = ({ children, className, ...props }: ButtonProps) => {
 					// Pseudo-element before
 					"&:before": {
 						content: '""',
-						background: "primary",
+						background: "foreground",
 						position: "absolute",
 						left: "0",
 						bottom: "0",

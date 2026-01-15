@@ -56,7 +56,7 @@ export default async function BlogPage({ params }: { params: Params }) {
 						marginBottom: "8",
 						transition: "colors",
 						_hover: {
-							color: "primary",
+							color: "link",
 						},
 					})}
 				>
@@ -125,7 +125,7 @@ export default async function BlogPage({ params }: { params: Params }) {
 								marginBottom: "4",
 							},
 							"& a": {
-								color: "primary",
+								color: "link",
 								_hover: {
 									textDecoration: "underline",
 								},

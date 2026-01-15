@@ -24,7 +24,7 @@ export const BlogCard = (content: CardProps) => {
 			<span
 				className={css({
 					fontSize: "15px",
-					color: "accent",
+					color: "muted-foreground",
 					marginBottom: "8px",
 				})}
 			>
@@ -39,7 +39,7 @@ export const BlogCard = (content: CardProps) => {
 					fontSize: "20px",
 					fontWeight: "bold",
 					marginBottom: "8px",
-					color: "text",
+					color: "foreground",
 				})}
 			>
 				{content.title}
@@ -52,7 +52,7 @@ export const BlogCard = (content: CardProps) => {
 				<p
 					className={css({
 						fontSize: "14px",
-						color: "accent",
+						color: "muted-foreground",
 						fontWeight: "500",
 					})}
 				>

@@ -1,15 +1,17 @@
 import { css } from "styled-system/css";
 import { Header } from "../components/header";
+import { Hero } from "../components/hero";
 import { getRecentBlogs } from "../lib/blog";
 import { getRecentWorks } from "../lib/work";
 import Link from "next/link";
 import { Button } from "../components/button";
-import { ArrowRight, MapPin } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 
 const Home = () => {
 	return (
 		<div className={css({ minHeight: "100vh", backgroundColor: "background" })}>
+			<Hero />
 			<Header />
 
 			<main
@@ -20,45 +22,6 @@ const Home = () => {
 					paddingY: "16",
 				})}
 			>
-				{/* Hero Section */}
-				<section
-					className={css({
-						marginBottom: "24",
-						borderBottom: "1px solid",
-						borderColor: "border",
-						paddingBottom: "24",
-					})}
-				>
-					<div className={css({ display: "flex", alignItems: "start", gap: "6", marginBottom: "8" })}>
-						<div
-							className={css({
-								height: "20",
-								width: "20",
-								borderRadius: "full",
-								background: "linear-gradient(to bottom right, {colors.primary}/20, {colors.primary}/5)",
-								display: "flex",
-								alignItems: "center",
-								justifyContent: "center",
-								fontSize: "3xl",
-								fontWeight: "bold",
-								border: "1px solid",
-								borderColor: "border",
-							})}
-						>
-							N
-						</div>
-						<div>
-							<h1 className={css({ fontSize: "4xl", fontWeight: "bold", marginBottom: "2" })}>nomanoma121</h1>
-							<p className={css({ fontSize: "xl", color: "muted-foreground", marginBottom: "3" })}>
-								Computer Science Student
-							</p>
-							<div className={css({ display: "flex", alignItems: "center", gap: "2", fontSize: "sm", color: "muted-foreground" })}>
-								<MapPin className={css({ h: "4", w: "4" })} />
-								<span>Saitama, Japan</span>
-							</div>
-						</div>
-					</div>
-				</section>
 
 				{/* About Section */}
 				<section
@@ -83,7 +46,7 @@ const Home = () => {
 								href="https://maximum.vc"
 								target="_blank"
 								rel="noopener noreferrer"
-								className={css({ color: "primary", _hover: { textDecoration: "underline" }, marginX: "1" })}
+								className={css({ color: "link", _hover: { textDecoration: "underline" }, marginX: "1" })}
 							>
 								Maximum
 							</a>
@@ -188,7 +151,7 @@ const Home = () => {
 												marginBottom: "2",
 												transition: "colors",
 												_groupHover: {
-													color: "primary",
+													color: "link",
 												},
 											})}
 										>
@@ -257,7 +220,7 @@ const Home = () => {
 														marginBottom: "2",
 														transition: "colors",
 														_groupHover: {
-															color: "primary",
+															color: "link",
 														},
 													})}
 												>
@@ -276,7 +239,7 @@ const Home = () => {
 													marginTop: "1",
 													transition: "all",
 													_groupHover: {
-														color: "primary",
+														color: "link",
 														transform: "translateX(0.25rem)",
 													},
 												})}

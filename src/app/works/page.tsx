@@ -14,7 +14,7 @@ const Works = () => {
 					className={css({
 						fontSize: "30px",
 						fontWeight: "500",
-						color: "primary",
+						color: "foreground",
 						marginBottom: "20px",
 						display: "block",
 						textAlign: "center",
@@ -25,7 +25,7 @@ const Works = () => {
 				<p
 					className={css({
 						fontSize: "18px",
-						color: "primary",
+						color: "foreground",
 						marginBottom: "20px",
 						display: "block",
 						textAlign: "center",

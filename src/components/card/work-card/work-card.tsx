@@ -38,7 +38,7 @@ export const WorkCard = (content: WorkCardProps) => {
 					className={css({
 						fontSize: "18x",
 						fontWeight: "bold",
-						color: "text",
+						color: "foreground",
 						padding: "0px 10px",
 						mt: "5px",
 					})}
@@ -54,7 +54,7 @@ export const WorkCard = (content: WorkCardProps) => {
 					<p
 						className={css({
 							fontSize: "14px",
-							color: "accent",
+							color: "muted-foreground",
 							fontWeight: "500",
 						})}
 					>
