@@ -149,12 +149,9 @@ export default async function BlogPage({ params }: { params: Params }) {
 							},
 							"& pre": {
 								backgroundColor: "muted",
-								padding: "4",
 								borderRadius: "lg",
 								overflowX: "auto",
 								marginBottom: "4",
-								border: "1px solid",
-								borderColor: "border",
 							},
 							"& pre code": {
 								backgroundColor: "transparent",
@@ -171,6 +168,10 @@ export default async function BlogPage({ params }: { params: Params }) {
 							"& img": {
 								borderRadius: "lg",
 								marginY: "4",
+								border: "none",
+								display: "block",
+								maxWidth: "full",
+								backgroundColor: "transparent",
 							},
 							"& table": {
 								width: "full",
