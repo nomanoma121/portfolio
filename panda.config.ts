@@ -44,6 +44,7 @@ export default defineConfig({
             "muted-foreground": { value: "#526D82" },
             border: { value: "#9DB2BF" },
             accent: { value: "#27374d" },
+            divider: { value: "rgba(0, 0, 0, 0.15)" },
           },
           black: {
             a6: { value: "rgba(0, 0, 0, 0.06)" },
@@ -129,7 +130,21 @@ export default defineConfig({
           accent: {
             value: {
               _light: "{colors.base.accent}",
-              _dark: "#2a2a2a"
+              _dark: "#909090"
+            }
+          },
+
+          text: {
+            value: {
+              _light: "{colors.base.foreground}",
+              _dark: "#d0d0d0"
+            }
+          },
+
+          divider: {
+            value: {
+              _light: "{colors.base.divider}",
+              _dark: "rgba(255, 255, 255, 0.1)"
             }
           },
 

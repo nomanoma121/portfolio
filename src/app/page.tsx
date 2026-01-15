@@ -6,7 +6,8 @@ import { getRecentWorks } from "../lib/work";
 import Link from "next/link";
 import { Button } from "../components/button";
 import { ArrowRight } from "lucide-react";
-import Image from "next/image";
+import { BlogListItem } from "../components/blog-list-item";
+import { WorkListItem } from "../components/work-list-item";
 
 const Home = () => {
 	return (
@@ -103,66 +104,14 @@ const Home = () => {
 					</div>
 					<div className={css({ display: "flex", flexDirection: "column", gap: "8" })}>
 						{getRecentWorks().map((work) => (
-							<Link key={work.slug} href={work.url} target="_blank" rel="noopener noreferrer" className={css({ display: "block" })}>
-								<div
-									className={css({
-										display: "flex",
-										gap: "6",
-										alignItems: "start",
-										borderLeft: "2px solid transparent",
-										paddingLeft: "6",
-										transition: "all",
-										_hover: {
-											borderColor: "primary",
-										},
-									})}
-								>
-									<div
-										className={css({
-											width: "48",
-											height: "32",
-											backgroundColor: "muted",
-											borderRadius: "md",
-											overflow: "hidden",
-											flexShrink: 0,
-										})}
-									>
-										<Image
-											src={`/images/works/${work.slug}.png`}
-											alt={work.title}
-											width={192}
-											height={128}
-											className={css({
-												width: "full",
-												height: "full",
-												objectFit: "cover",
-												transition: "transform",
-												_groupHover: {
-													transform: "scale(1.05)",
-												},
-											})}
-										/>
-									</div>
-									<div className={css({ flex: 1, minWidth: 0 })}>
-										<h3
-											className={css({
-												fontWeight: "semibold",
-												fontSize: "lg",
-												marginBottom: "2",
-												transition: "colors",
-												_groupHover: {
-													color: "link",
-												},
-											})}
-										>
-											{work.title}
-										</h3>
-										<p className={css({ fontSize: "sm", color: "muted-foreground", lineHeight: "relaxed" })}>
-											{work.description}
-										</p>
-									</div>
-								</div>
-							</Link>
+							<WorkListItem
+								key={work.slug}
+								slug={work.slug}
+								title={work.title}
+								description={work.description}
+								url={work.url}
+								image={`/images/works/${work.slug}.png`}
+							/>
 						))}
 					</div>
 				</section>
@@ -188,77 +137,8 @@ const Home = () => {
 					<div className={css({ display: "flex", flexDirection: "column", gap: "4" })}>
 						{getRecentBlogs().map((blog, index) => (
 							<>
-								<Link key={blog.slug} href={`/blogs/${blog.slug}`} className={css({ display: "block" })}>
-									<div
-										className={css({
-											borderLeft: "2px solid transparent",
-											paddingLeft: "6",
-											paddingY: "2",
-											transition: "all",
-											_hover: {
-												borderColor: "primary",
-											},
-										})}
-									>
-										<div className={css({ display: "flex", alignItems: "start", justifyContent: "space-between", gap: "4" })}>
-											<div className={css({ flex: 1 })}>
-												<div className={css({ display: "flex", gap: "3", marginBottom: "2" })}>
-													<time
-														className={css({
-															fontSize: "sm",
-															color: "muted-foreground",
-															display: "block",
-															fontFamily: "mono",
-														})}
-													>
-														作成: {blog.date}
-													</time>
-													<time
-														className={css({
-															fontSize: "sm",
-															color: "muted-foreground",
-															display: "block",
-															fontFamily: "mono",
-														})}
-													>
-														更新: {blog.date}
-													</time>
-												</div>
-												<h3
-													className={css({
-														fontWeight: "semibold",
-														fontSize: "xl",
-														marginBottom: "1.5",
-														transition: "colors",
-														_groupHover: {
-															color: "primary",
-														},
-													})}
-												>
-													{blog.title}
-												</h3>
-												<p className={css({ color: "muted-foreground", lineHeight: "relaxed" })}>
-													{blog.description}
-												</p>
-											</div>
-											<ArrowRight
-												className={css({
-													h: "5",
-													w: "5",
-													color: "muted-foreground",
-													flexShrink: 0,
-													marginTop: "1",
-													transition: "all",
-													_groupHover: {
-														color: "primary",
-														transform: "translateX(0.25rem)",
-													},
-												})}
-											/>
-										</div>
-									</div>
-								</Link>
-								{index < getRecentBlogs().length - 1 && <div className={css({ borderTop: "1px solid", borderColor: "rgba(0, 0, 0, 0.15)" })} />}
+								<BlogListItem key={blog.slug} slug={blog.slug} title={blog.title} description={blog.description} date={blog.date} />
+								{index < getRecentBlogs().length - 1 && <div className={css({ borderTop: "1px solid", borderColor: "divider" })} />}
 							</>
 						))}
 					</div>
