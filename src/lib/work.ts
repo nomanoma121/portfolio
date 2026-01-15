@@ -48,7 +48,7 @@ export function getAllWorks() {
 			title,
 			description: description,
 			url,
-			date,
+			date: date instanceof Date ? date.toISOString().split('T')[0] : date,
 		};
 	});
 

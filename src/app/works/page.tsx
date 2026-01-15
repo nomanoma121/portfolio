@@ -1,5 +1,5 @@
-import { Container } from "@/src/components/container";
-import { css } from "../../../styled-system/css";
+import { Container } from "@/components/container";
+import { css } from "styled-system/css";
 import { Header } from "../../components/header";
 import { getAllWorks } from "../../lib/work";
 import { WorkCard } from "../../components/card/work-card";

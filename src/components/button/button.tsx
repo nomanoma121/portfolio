@@ -1,5 +1,5 @@
 import type React from "react";
-import { css } from "../../../styled-system/css";
+import { css } from "styled-system/css";
 
 type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
 	children: React.ReactNode;

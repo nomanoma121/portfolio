@@ -34,6 +34,7 @@ export async function getBlog(slug: string) {
 		contentHtml,
 		title: data.title,
 		description: data.description || "",
+		date: data.date instanceof Date ? data.date.toISOString().split('T')[0] : data.date,
 	};
 }
 
@@ -51,7 +52,7 @@ export function getAllBlogs() {
 			slug,
 			title,
 			description: description || "",
-			date: date,
+			date: date instanceof Date ? date.toISOString().split('T')[0] : date,
 		};
 	});
 

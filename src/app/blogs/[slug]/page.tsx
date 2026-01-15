@@ -1,10 +1,9 @@
 import { getAllBlogs, getBlog } from "../../../lib/blog";
 import type { Metadata } from "next";
 import { Header } from "../../../components/header";
-import { css } from "../../../../styled-system/css";
-import { Container } from "../../../components/container";
+import { css } from "styled-system/css";
 import Link from "next/link";
-import { Button } from "../../../components/button";
+import { ArrowLeft } from "lucide-react";
 
 type Params = {
 	slug: string;
@@ -35,50 +34,173 @@ export default async function BlogPage({ params }: { params: Params }) {
 	const blog = await getBlog(params.slug);
 
 	return (
-		<main className="prose mx-auto p-8">
+		<div className={css({ minHeight: "100vh", backgroundColor: "background" })}>
 			<Header />
-			<Container>
-				<Link href="/blogs">
-					<Button>← Back</Button>
-				</Link>
-				<h1
+
+			<main
+				className={css({
+					maxWidth: "4xl",
+					marginX: "auto",
+					paddingX: "6",
+					paddingY: "12",
+				})}
+			>
+				<Link
+					href="/blogs"
 					className={css({
-						fontSize: "30px",
-						fontWeight: "500",
-						color: "primary",
-						marginBottom: "20px",
-						display: "block",
-						textAlign: "center",
-						margin: "0 auto",
+						display: "inline-flex",
+						alignItems: "center",
+						gap: "2",
+						fontSize: "sm",
+						color: "muted-foreground",
+						marginBottom: "8",
+						transition: "colors",
+						_hover: {
+							color: "primary",
+						},
 					})}
 				>
-					{blog.title}
-				</h1>
-				<article
-					className={css({
-						fontSize: "md",
-						lineHeight: "base",
-						color: "gray.800",
-						mt: "8",
-						"& h1": {
-							fontSize: "xl",
-							fontWeight: "bold",
-							mt: "8",
-							borderBottom: "2px solid",
-							pb: "2",
-						},
-						"& h2": { fontSize: "lg", fontWeight: "bold", mt: "6" },
-						"& p": { my: "4" },
-						"& code": {
-							borderRadius: "md",
-							fontSize: "sm",
-							backgroundColor: "",
-						},
-						"& a": { color: "blue.500", textDecoration: "underline" },
-					})}
-					dangerouslySetInnerHTML={{ __html: blog.contentHtml }}
-				/>
-			</Container>
-		</main>
+					<ArrowLeft className={css({ h: "4", w: "4" })} />
+					Back to Blogs
+				</Link>
+
+				<article>
+					<header
+						className={css({
+							marginBottom: "12",
+							paddingBottom: "8",
+							borderBottom: "1px solid",
+							borderColor: "border",
+						})}
+					>
+						<time className={css({ fontSize: "sm", color: "muted-foreground", fontFamily: "mono" })}>
+							{blog.date}
+						</time>
+						<h1 className={css({ fontSize: "4xl", fontWeight: "bold", marginTop: "4", marginBottom: "6", color: "foreground" })}>
+							{blog.title}
+						</h1>
+					</header>
+
+					<div
+						className={css({
+							maxWidth: "none",
+							color: "foreground",
+							"& h1": {
+								fontSize: "4xl",
+								fontWeight: "bold",
+								marginTop: "8",
+								marginBottom: "6",
+								color: "foreground",
+								borderBottom: "1px solid",
+								borderColor: "border",
+								paddingBottom: "4",
+							},
+							"& h2": {
+								fontSize: "3xl",
+								fontWeight: "bold",
+								marginTop: "8",
+								marginBottom: "4",
+								color: "foreground",
+								borderLeft: "4px solid",
+								borderColor: "primary",
+								paddingLeft: "4",
+							},
+							"& h3": {
+								fontSize: "2xl",
+								fontWeight: "semibold",
+								marginTop: "6",
+								marginBottom: "3",
+								color: "foreground",
+							},
+							"& h4": {
+								fontSize: "xl",
+								fontWeight: "semibold",
+								marginTop: "4",
+								marginBottom: "2",
+								color: "foreground",
+							},
+							"& p": {
+								color: "muted-foreground",
+								lineHeight: "relaxed",
+								marginBottom: "4",
+							},
+							"& a": {
+								color: "primary",
+								_hover: {
+									textDecoration: "underline",
+								},
+							},
+							"& ul, & ol": {
+								marginBottom: "4",
+								paddingLeft: "6",
+								color: "muted-foreground",
+							},
+							"& li": {
+								marginBottom: "2",
+							},
+							"& code": {
+								backgroundColor: "muted",
+								color: "foreground",
+								paddingX: "1.5",
+								paddingY: "0.5",
+								borderRadius: "sm",
+								fontSize: "sm",
+								fontFamily: "mono",
+							},
+							"& pre": {
+								backgroundColor: "muted",
+								padding: "4",
+								borderRadius: "lg",
+								overflowX: "auto",
+								marginBottom: "4",
+								border: "1px solid",
+								borderColor: "border",
+							},
+							"& pre code": {
+								backgroundColor: "transparent",
+								padding: "0",
+							},
+							"& blockquote": {
+								borderLeft: "4px solid",
+								borderColor: "primary",
+								paddingLeft: "4",
+								fontStyle: "italic",
+								color: "muted-foreground",
+								marginY: "4",
+							},
+							"& img": {
+								borderRadius: "lg",
+								marginY: "4",
+							},
+							"& table": {
+								width: "full",
+								borderCollapse: "collapse",
+								marginBottom: "4",
+							},
+							"& th": {
+								backgroundColor: "muted",
+								paddingX: "4",
+								paddingY: "2",
+								textAlign: "left",
+								fontWeight: "semibold",
+								border: "1px solid",
+								borderColor: "border",
+							},
+							"& td": {
+								paddingX: "4",
+								paddingY: "2",
+								border: "1px solid",
+								borderColor: "border",
+							},
+							"& hr": {
+								marginY: "8",
+								borderColor: "border",
+							},
+						})}
+						dangerouslySetInnerHTML={{ __html: blog.contentHtml }}
+					/>
+				</article>
+			</main>
+		</div>
 	);
 }
