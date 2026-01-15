@@ -73,63 +73,70 @@ export default defineConfig({
           background: {
             value: {
               _light: "{colors.base.background}",
-              _dark: "#1a1a1a"
+              _dark: "#0a0a0a"
             }
           },
 
           foreground: {
             value: {
               _light: "{colors.base.foreground}",
-              _dark: "#DDE6ED"
+              _dark: "#f0f0f0"
             }
           },
 
           primary: {
             value: {
               _light: "{colors.base.primary}",
-              _dark: "#526D82"
+              _dark: "#0d0d0d"
             }
           },
 
           "primary-foreground": {
             value: {
               _light: "{colors.base.primary-foreground}",
-              _dark: "{colors.base.primary-foreground}"
+              _dark: "#f0f0f0"
             }
           },
 
           secondary: {
             value: {
               _light: "{colors.base.secondary}",
-              _dark: "{colors.base.secondary}"
+              _dark: "#2a2a2a"
             }
           },
 
           muted: {
             value: {
               _light: "{colors.base.muted}",
-              _dark: "#27374d"
+              _dark: "#1a1a1a"
             }
           },
 
           "muted-foreground": {
             value: {
               _light: "{colors.base.muted-foreground}",
-              _dark: "#9DB2BF"
+              _dark: "#a0a0a0"
             }
           },
 
           border: {
             value: {
               _light: "{colors.base.border}",
-              _dark: "#27374d"
+              _dark: "#2a2a2a"
             }
           },
 
           accent: {
             value: {
               _light: "{colors.base.accent}",
-              _dark: "{colors.base.accent}"
+              _dark: "#2a2a2a"
+            }
+          },
+
+          link: {
+            value: {
+              _light: "{colors.base.primary}",
+              _dark: "#6b9bd1"
             }
           },
 
@@ -200,7 +207,7 @@ export default defineConfig({
       fontFamily: "Noto Sans JP, sans-serif",
     },
     p: {
-      color: "primary",
+      color: "foreground",
       fontWeight: "400",
     },
   },
