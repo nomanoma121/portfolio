@@ -11,26 +11,17 @@ const Blogs = () => {
 		<>
 			<Header />
 			<Container>
-				<div
+				<h1
 					className={css({
+						fontSize: "2xl",
+						fontWeight: "bold",
+						color: "foreground",
 						marginBottom: "12",
-						borderBottom: "1px solid",
-						borderColor: "border",
-						paddingBottom: "12",
+						display: "block",
 					})}
 				>
-					<h1
-						className={css({
-							fontSize: "4xl",
-							fontWeight: "bold",
-							color: "foreground",
-							marginBottom: "4",
-							display: "block",
-						})}
-					>
-						Blogs
-					</h1>
-				</div>
+					Blogs
+				</h1>
 				<div className={css({ display: "flex", flexDirection: "column", gap: "4" })}>
 					{blogList.map((blog, index) => (
 						<>
@@ -104,7 +95,7 @@ const Blogs = () => {
 									</div>
 								</div>
 							</Link>
-							{index < blogList.length - 1 && <div className={css({ borderTop: "1px solid", borderColor: "border" })} />}
+							{index < blogList.length - 1 && <div className={css({ borderTop: "1px solid", borderColor: "rgba(0, 0, 0, 0.15)" })} />}
 						</>
 					))}
 				</div>

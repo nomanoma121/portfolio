@@ -185,10 +185,10 @@ const Home = () => {
 							</Button>
 						</Link>
 					</div>
-					<div className={css({ display: "flex", flexDirection: "column", gap: "6" })}>
+					<div className={css({ display: "flex", flexDirection: "column", gap: "4" })}>
 						{getRecentBlogs().map((blog, index) => (
-							<div key={blog.slug}>
-								<Link href={`/blogs/${blog.slug}`} className={css({ display: "block" })}>
+							<>
+								<Link key={blog.slug} href={`/blogs/${blog.slug}`} className={css({ display: "block" })}>
 									<div
 										className={css({
 											borderLeft: "2px solid transparent",
@@ -202,31 +202,42 @@ const Home = () => {
 									>
 										<div className={css({ display: "flex", alignItems: "start", justifyContent: "space-between", gap: "4" })}>
 											<div className={css({ flex: 1 })}>
-												<time
-													className={css({
-														fontSize: "xs",
-														color: "muted-foreground",
-														marginBottom: "2",
-														display: "block",
-														fontFamily: "mono",
-													})}
-												>
-													{blog.date}
-												</time>
+												<div className={css({ display: "flex", gap: "3", marginBottom: "2" })}>
+													<time
+														className={css({
+															fontSize: "sm",
+															color: "muted-foreground",
+															display: "block",
+															fontFamily: "mono",
+														})}
+													>
+														作成: {blog.date}
+													</time>
+													<time
+														className={css({
+															fontSize: "sm",
+															color: "muted-foreground",
+															display: "block",
+															fontFamily: "mono",
+														})}
+													>
+														更新: {blog.date}
+													</time>
+												</div>
 												<h3
 													className={css({
 														fontWeight: "semibold",
-														fontSize: "lg",
-														marginBottom: "2",
+														fontSize: "xl",
+														marginBottom: "1.5",
 														transition: "colors",
 														_groupHover: {
-															color: "link",
+															color: "primary",
 														},
 													})}
 												>
 													{blog.title}
 												</h3>
-												<p className={css({ fontSize: "sm", color: "muted-foreground", lineHeight: "relaxed" })}>
+												<p className={css({ color: "muted-foreground", lineHeight: "relaxed" })}>
 													{blog.description}
 												</p>
 											</div>
@@ -239,7 +250,7 @@ const Home = () => {
 													marginTop: "1",
 													transition: "all",
 													_groupHover: {
-														color: "link",
+														color: "primary",
 														transform: "translateX(0.25rem)",
 													},
 												})}
@@ -247,10 +258,8 @@ const Home = () => {
 										</div>
 									</div>
 								</Link>
-								{index < getRecentBlogs().length - 1 && (
-									<div className={css({ borderTop: "1px solid", borderColor: "border", marginY: "6" })} />
-								)}
-							</div>
+								{index < getRecentBlogs().length - 1 && <div className={css({ borderTop: "1px solid", borderColor: "rgba(0, 0, 0, 0.15)" })} />}
+							</>
 						))}
 					</div>
 				</section>
