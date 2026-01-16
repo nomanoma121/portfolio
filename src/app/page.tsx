@@ -67,6 +67,7 @@ const Home = () => {
               fontSize: "2xl",
               fontWeight: "bold",
               marginBottom: "6",
+              color: "foreground",
             })}
           >
             About me
@@ -137,6 +138,7 @@ const Home = () => {
               fontSize: "2xl",
               fontWeight: "bold",
               marginBottom: "6",
+              color: "foreground",
             })}
           >
             Skills
@@ -196,7 +198,7 @@ const Home = () => {
               marginBottom: "8",
             })}
           >
-            <h2 className={css({ fontSize: "2xl", fontWeight: "bold" })}>
+            <h2 className={css({ fontSize: "2xl", fontWeight: "bold", color: "foreground" })}>
               Works
             </h2>
             <Link href="/works">

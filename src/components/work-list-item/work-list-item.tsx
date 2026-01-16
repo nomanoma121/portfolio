@@ -58,6 +58,7 @@ export const WorkListItem = ({ slug, title, description, url, image }: WorkListI
 							fontWeight: "semibold",
 							fontSize: "lg",
 							marginBottom: "2",
+							color: "foreground",
 							transition: "colors",
 							_groupHover: {
 								color: "link",

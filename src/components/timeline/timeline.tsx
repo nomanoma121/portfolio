@@ -27,7 +27,7 @@ export const TimelineItem = ({ date, title, description, isLast = false }: Timel
 			</div>
 			<div className={css({ flex: 1, paddingBottom: isLast ? "0" : "8" })}>
 				<time className={css({ fontSize: "sm", color: "muted-foreground", fontFamily: "mono" })}>{date}</time>
-				<h3 className={css({ fontWeight: "semibold", fontSize: "lg", marginTop: "2", marginBottom: "1" })}>
+				<h3 className={css({ fontWeight: "semibold", fontSize: "lg", marginTop: "2", marginBottom: "1", color: "foreground" })}>
 					{title}
 				</h3>
 				<p className={css({ fontSize: "sm", color: "muted-foreground", lineHeight: "relaxed" })}>

@@ -55,6 +55,7 @@ export const BlogListItem = ({ slug, title, description, date, updatedAt }: Blog
 								fontWeight: "semibold",
 								fontSize: "xl",
 								marginBottom: "1.5",
+								color: "foreground",
 								transition: "colors",
 								_groupHover: {
 									color: "primary",
