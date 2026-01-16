@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { css } from "../../../styled-system/css";
+import { css } from "styled-system/css";
 
 export const Header = () => {
 	const headerLink = css({
@@ -7,9 +7,10 @@ export const Header = () => {
 		margin: "0 10px",
 		paddingBottom: "5px",
 		position: "relative",
+		color: "primary-foreground",
 
 		_before: {
-			background: "#dde6edf0",
+			background: "primary-foreground",
 			content: '""',
 			width: "100%",
 			height: "2px",
@@ -37,8 +38,7 @@ export const Header = () => {
 				top: "0",
 				width: "100%",
 				height: "70px",
-				color: "background",
-				backgroundColor: "#27374d",
+				backgroundColor: "primary",
 				display: "flex",
 				justifyContent: "center",
 				alignItems: "center",

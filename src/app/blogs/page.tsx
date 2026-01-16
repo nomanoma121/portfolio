@@ -1,8 +1,8 @@
-import { getAllBlogs } from "@/src/lib/blog";
-import { css } from "../../../styled-system/css";
+import { getAllBlogs } from "@/lib/blog";
+import { css } from "styled-system/css";
 import { Header } from "../../components/header";
-import { BlogCard } from "../../components/card/blog-card";
-import { Container } from "@/src/components/container";
+import { Container } from "@/components/container";
+import { BlogListItem } from "../../components/blog-list-item";
 
 const Blogs = () => {
 	const blogList = getAllBlogs();
@@ -12,12 +12,11 @@ const Blogs = () => {
 			<Container>
 				<h1
 					className={css({
-						fontSize: "30px",
-						fontWeight: "500",
-						color: "primary",
-						marginBottom: "20px",
+						fontSize: "2xl",
+						fontWeight: "bold",
+						color: "foreground",
+						marginBottom: "12",
 						display: "block",
-						textAlign: "center",
 					})}
 				>
 					Blogs
@@ -25,22 +24,29 @@ const Blogs = () => {
 				<div
 					className={css({
 						display: "flex",
-						alignItems: "center",
-						justifyContent: { base: "center", md: "flex-start" },
-						gap: "20px",
-						maxWidth: { md: "720px", xl: "1090px" },
-						flexWrap: "wrap",
-						margin: "0 auto",
+						flexDirection: "column",
+						gap: "4",
 					})}
 				>
-					{blogList.map((blog) => (
-						<BlogCard
-							key={blog.slug}
-							slug={blog.slug}
-							title={blog.title}
-							description={blog.description}
-							date={blog.date}
-						/>
+					{blogList.map((blog, index) => (
+						<>
+							<BlogListItem
+								key={blog.slug}
+								slug={blog.slug}
+								title={blog.title}
+								description={blog.description}
+								date={blog.date}
+								updatedAt={blog.updatedAt}
+							/>
+							{index < blogList.length - 1 && (
+								<div
+									className={css({
+										borderTop: "1px solid",
+										borderColor: "divider",
+									})}
+								/>
+							)}
+						</>
 					))}
 				</div>
 			</Container>

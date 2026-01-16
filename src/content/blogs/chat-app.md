@@ -2,6 +2,7 @@
 title: チャットアプリを作ってみた
 description: チャットアプリを作ったのでどんな機能があるのか紹介します。
 date: 2025-12-26
+updatedAt: 2026-01-10
 ---
 
 # はじめに
@@ -29,13 +30,13 @@ date: 2025-12-26
 画像での簡単な紹介です。
 
 下が一番メインとなるチャット画面です。Discordを知っていればどこに何が表示しているかがわかると思います。
-![chat-display](https://nomanoma-dev.com/images/blogs/chat-app/chat-display.png)
+![chat-display](/images/blogs/chat-app/chat-display.png)
 
 左のサイドバーでチャンネルの作成を選択するとこのような画面がでて、チャンネルであったりカテゴリの作成ができます。
-![channel-modal](https://nomanoma-dev.com/images/blogs/chat-app/channel-modal.png)
+![channel-modal](/images/blogs/chat-app/channel-modal.png)
 
 サーバーへの招待も行うことができて、期限であったり、使用回数も制限できます。発行した招待リンクを踏むことでサーバーに参加できます。
-![invite-display](https://nomanoma-dev.com/images/blogs/chat-app/invite-display.png)
+![invite-display](/images/blogs/chat-app/invite-display.png)
 
 ## 技術スタック
 
@@ -80,7 +81,7 @@ date: 2025-12-26
 
 アーキテクチャ図を書いてみたかったので一通り現状を書いてみました。図が複雑になりそうだったので書いていませんが、各サービス間はgRPCで通信しています。また一部はRedisのキャッシュを効かせていたりしています。
 
-![chat-app-architecture](https://nomanoma-dev.com/images/blogs/chat-app/chat-app-architecture.png)
+![chat-app-architecture](/images/blogs/chat-app/chat-app-architecture.png)
 
 各サービスでやっていることを簡単に紹介します。
 

@@ -1,4 +1,4 @@
-import { css, cx } from "../../../styled-system/css";
+import { css, cx } from "styled-system/css";
 
 export const Footer = ({ className }: { className?: string }) => {
 	return (
