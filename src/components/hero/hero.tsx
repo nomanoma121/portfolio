@@ -6,14 +6,16 @@ export const Hero = () => {
 		width: "100px",
 		height: "100px",
 		borderRadius: "50%",
-		marginRight: "20px",
+		marginRight: { base: "0", md: "20px" },
+		marginBottom: { base: "4", md: "0" },
 	});
 
 	const caption = css({
-		fontSize: "20px",
+		fontSize: { base: "14px", md: "20px" },
 		color: "primary-foreground",
 		marginBottom: "10px",
 		alignItems: "center",
+		textAlign: { base: "center", md: "left" },
 	});
 
 	const logo = css({
@@ -27,34 +29,38 @@ export const Hero = () => {
 			className={css({
 				backgroundColor: "primary",
 				display: "flex",
+				flexDirection: { base: "column", md: "row" },
 				justifyContent: "center",
 				alignItems: "center",
 				fontSize: "30px",
-				height: "200px",
+				minHeight: { base: "auto", md: "200px" },
+				paddingY: { base: "8", md: "0" },
+				paddingX: { base: "4", md: "0" },
+				gap: { base: "6", md: "0" },
 			})}
 			id="home"
 		>
 			<div
 				className={css({
 					display: "flex",
+					flexDirection: { base: "column", md: "row" },
 					alignItems: "center",
 					justifyContent: "center",
-					marginRight: "100px",
+					marginRight: { base: "0", md: "100px" },
 				})}
 			>
 				<img src="/images/icon.webp" alt="icon" className={icon} />
-				<div>
+				<div className={css({ textAlign: { base: "center", md: "left" } })}>
 					<h1
 						className={css({
-							fontSize: "30px",
+							fontSize: { base: "24px", md: "30px" },
 							color: "primary-foreground",
-							// TODO: マイナスを使わないようにする
-							marginTop: "-15px",
+							marginTop: { base: "0", md: "-15px" },
 						})}
 					>
 						nomanoma121
 					</h1>
-					<div className={css({ display: "flex", marginTop: "10px" })}>
+					<div className={css({ display: "flex", marginTop: "10px", justifyContent: { base: "center", md: "flex-start" } })}>
 						<Link href="https://github.com/nomanoma121" target="_blank">
 							<img src="/images/github.svg" alt="github" className={logo} />
 						</Link>
