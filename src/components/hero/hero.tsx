@@ -60,7 +60,13 @@ export const Hero = () => {
 					>
 						nomanoma121
 					</h1>
-					<div className={css({ display: "flex", marginTop: "10px", justifyContent: { base: "center", md: "flex-start" } })}>
+					<div
+						className={css({
+							display: "flex",
+							marginTop: "10px",
+							justifyContent: { base: "center", md: "flex-start" },
+						})}
+					>
 						<Link href="https://github.com/nomanoma121" target="_blank">
 							<img src="/images/github.svg" alt="github" className={logo} />
 						</Link>

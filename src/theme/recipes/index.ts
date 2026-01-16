@@ -8,14 +8,14 @@ import { absoluteCenter } from "./absolute-center";
 import { group } from "./group";
 import { button } from "./button";
 export const recipes = {
-  button,
-  group,
-  absoluteCenter,
-  spinner,
-  code,
-  text,
-  breadcrumb,
-  heading,
-  alert
-}
-export const slotRecipes = {}
+	button,
+	group,
+	absoluteCenter,
+	spinner,
+	code,
+	text,
+	breadcrumb,
+	heading,
+	alert,
+};
+export const slotRecipes = {};

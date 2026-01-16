@@ -31,7 +31,13 @@ const Works = () => {
 				>
 					それぞれクリックするとGitHubのリポジトリに遷移します。
 				</p>
-				<div className={css({ display: "flex", flexDirection: "column", gap: "8" })}>
+				<div
+					className={css({
+						display: "flex",
+						flexDirection: "column",
+						gap: "8",
+					})}
+				>
 					{works.map((work) => (
 						<WorkListItem
 							key={work.slug}

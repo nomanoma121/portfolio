@@ -22,7 +22,10 @@ export default function RootLayout({
 	children: React.ReactNode;
 }>) {
 	return (
-		<html lang="ja" className={`${mPlusRounded.variable} ${css({ height: "100%" })}`}>
+		<html
+			lang="ja"
+			className={`${mPlusRounded.variable} ${css({ height: "100%" })}`}
+		>
 			<body
 				className={`${mPlusRounded.className} ${css({
 					backgroundColor: "background",

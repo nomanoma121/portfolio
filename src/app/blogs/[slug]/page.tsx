@@ -73,19 +73,39 @@ export default async function BlogPage({ params }: { params: Params }) {
 							borderColor: "border",
 						})}
 					>
-						<div className={css({ display: "flex", gap: "4", fontSize: "sm", color: "muted-foreground", fontFamily: "mono" })}>
+						<div
+							className={css({
+								display: "flex",
+								gap: "4",
+								fontSize: "sm",
+								color: "muted-foreground",
+								fontFamily: "mono",
+							})}
+						>
 							<div>
-								<span className={css({ color: "muted-foreground" })}>作成日: </span>
+								<span className={css({ color: "muted-foreground" })}>
+									作成日:{" "}
+								</span>
 								<time>{blog.date}</time>
 							</div>
 							{blog.updatedAt && blog.updatedAt !== blog.date && (
 								<div>
-									<span className={css({ color: "muted-foreground" })}>更新日: </span>
+									<span className={css({ color: "muted-foreground" })}>
+										更新日:{" "}
+									</span>
 									<time>{blog.updatedAt}</time>
 								</div>
 							)}
 						</div>
-						<h1 className={css({ fontSize: "2xl", fontWeight: "bold", marginTop: "4", marginBottom: "6", color: "foreground" })}>
+						<h1
+							className={css({
+								fontSize: "2xl",
+								fontWeight: "bold",
+								marginTop: "4",
+								marginBottom: "6",
+								color: "foreground",
+							})}
+						>
 							{blog.title}
 						</h1>
 					</header>

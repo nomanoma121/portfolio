@@ -10,7 +10,13 @@ type BlogListItemProps = {
 	updatedAt?: string;
 };
 
-export const BlogListItem = ({ slug, title, description, date, updatedAt }: BlogListItemProps) => {
+export const BlogListItem = ({
+	slug,
+	title,
+	description,
+	date,
+	updatedAt,
+}: BlogListItemProps) => {
 	return (
 		<Link href={`/blogs/${slug}`} className={css({ display: "block" })}>
 			<div
@@ -24,9 +30,18 @@ export const BlogListItem = ({ slug, title, description, date, updatedAt }: Blog
 					},
 				})}
 			>
-				<div className={css({ display: "flex", alignItems: "start", justifyContent: "space-between", gap: "4" })}>
+				<div
+					className={css({
+						display: "flex",
+						alignItems: "start",
+						justifyContent: "space-between",
+						gap: "4",
+					})}
+				>
 					<div className={css({ flex: 1 })}>
-						<div className={css({ display: "flex", gap: "3", marginBottom: "2" })}>
+						<div
+							className={css({ display: "flex", gap: "3", marginBottom: "2" })}
+						>
 							<time
 								className={css({
 									fontSize: "sm",
@@ -64,7 +79,12 @@ export const BlogListItem = ({ slug, title, description, date, updatedAt }: Blog
 						>
 							{title}
 						</h3>
-						<p className={css({ color: "muted-foreground", lineHeight: "relaxed" })}>
+						<p
+							className={css({
+								color: "muted-foreground",
+								lineHeight: "relaxed",
+							})}
+						>
 							{description}
 						</p>
 					</div>

@@ -35,8 +35,15 @@ export async function getBlog(slug: string) {
 		contentHtml,
 		title: data.title,
 		description: data.description || "",
-		date: data.date instanceof Date ? data.date.toISOString().split('T')[0] : data.date,
-		updatedAt: data.updatedAt ? (data.updatedAt instanceof Date ? data.updatedAt.toISOString().split('T')[0] : data.updatedAt) : undefined,
+		date:
+			data.date instanceof Date
+				? data.date.toISOString().split("T")[0]
+				: data.date,
+		updatedAt: data.updatedAt
+			? data.updatedAt instanceof Date
+				? data.updatedAt.toISOString().split("T")[0]
+				: data.updatedAt
+			: undefined,
 	};
 }
 
@@ -54,8 +61,10 @@ export function getAllBlogs() {
 			slug,
 			title,
 			description: description || "",
-			date: new Date(date).toISOString().split('T')[0],
-			updatedAt: updatedAt ? new Date(updatedAt).toISOString().split('T')[0] : undefined,
+			date: new Date(date).toISOString().split("T")[0],
+			updatedAt: updatedAt
+				? new Date(updatedAt).toISOString().split("T")[0]
+				: undefined,
 		};
 	});
 

@@ -10,9 +10,20 @@ type WorkListItemProps = {
 	image: string;
 };
 
-export const WorkListItem = ({ slug, title, description, url, image }: WorkListItemProps) => {
+export const WorkListItem = ({
+	slug,
+	title,
+	description,
+	url,
+	image,
+}: WorkListItemProps) => {
 	return (
-		<Link href={url} target="_blank" rel="noopener noreferrer" className={css({ display: "block" })}>
+		<Link
+			href={url}
+			target="_blank"
+			rel="noopener noreferrer"
+			className={css({ display: "block" })}
+		>
 			<div
 				className={css({
 					display: "flex",
@@ -67,7 +78,13 @@ export const WorkListItem = ({ slug, title, description, url, image }: WorkListI
 					>
 						{title}
 					</h3>
-					<p className={css({ fontSize: "sm", color: "muted-foreground", lineHeight: "relaxed" })}>
+					<p
+						className={css({
+							fontSize: "sm",
+							color: "muted-foreground",
+							lineHeight: "relaxed",
+						})}
+					>
 						{description}
 					</p>
 				</div>
