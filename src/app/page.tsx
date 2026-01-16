@@ -280,6 +280,7 @@ const Home = () => {
                   title={blog.title}
                   description={blog.description}
                   date={blog.date}
+                  updatedAt={blog.updatedAt}
                 />
                 {index < getRecentBlogs().length - 1 && (
                   <div

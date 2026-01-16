@@ -24,7 +24,7 @@ const Blogs = () => {
 				<div className={css({ display: "flex", flexDirection: "column", gap: "4" })}>
 					{blogList.map((blog, index) => (
 						<>
-							<BlogListItem key={blog.slug} slug={blog.slug} title={blog.title} description={blog.description} date={blog.date} />
+							<BlogListItem key={blog.slug} slug={blog.slug} title={blog.title} description={blog.description} date={blog.date} updatedAt={blog.updatedAt} />
 							{index < blogList.length - 1 && <div className={css({ borderTop: "1px solid", borderColor: "divider" })} />}
 						</>
 					))}

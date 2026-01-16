@@ -7,9 +7,10 @@ type BlogListItemProps = {
 	title: string;
 	description: string;
 	date: string;
+	updatedAt?: string;
 };
 
-export const BlogListItem = ({ slug, title, description, date }: BlogListItemProps) => {
+export const BlogListItem = ({ slug, title, description, date, updatedAt }: BlogListItemProps) => {
 	return (
 		<Link href={`/blogs/${slug}`} className={css({ display: "block" })}>
 			<div
@@ -36,16 +37,18 @@ export const BlogListItem = ({ slug, title, description, date }: BlogListItemPro
 							>
 								作成: {date}
 							</time>
-							<time
-								className={css({
-									fontSize: "sm",
-									color: "muted-foreground",
-									display: "block",
-									fontFamily: "mono",
-								})}
-							>
-								更新: {date}
-							</time>
+							{updatedAt && updatedAt !== date && (
+								<time
+									className={css({
+										fontSize: "sm",
+										color: "muted-foreground",
+										display: "block",
+										fontFamily: "mono",
+									})}
+								>
+									更新: {updatedAt}
+								</time>
+							)}
 						</div>
 						<h3
 							className={css({

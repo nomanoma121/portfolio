@@ -12,6 +12,7 @@ type BlogFrontMatter = {
 	title: string;
 	description?: string;
 	date: string;
+	updatedAt?: string;
 };
 
 export async function getBlog(slug: string) {
@@ -35,6 +36,7 @@ export async function getBlog(slug: string) {
 		title: data.title,
 		description: data.description || "",
 		date: data.date instanceof Date ? data.date.toISOString().split('T')[0] : data.date,
+		updatedAt: data.updatedAt ? (data.updatedAt instanceof Date ? data.updatedAt.toISOString().split('T')[0] : data.updatedAt) : undefined,
 	};
 }
 
@@ -46,13 +48,14 @@ export function getAllBlogs() {
 		const fullPath = path.join(blogsDirectory, fileName);
 		const fileContents = fs.readFileSync(fullPath, "utf8");
 		const { data } = matter(fileContents);
-		const { title, description, date } = data as BlogFrontMatter;
+		const { title, description, date, updatedAt } = data as BlogFrontMatter;
 
 		return {
 			slug,
 			title,
 			description: description || "",
 			date: new Date(date).toISOString().split('T')[0],
+			updatedAt: updatedAt ? new Date(updatedAt).toISOString().split('T')[0] : undefined,
 		};
 	});
 
