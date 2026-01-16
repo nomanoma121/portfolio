@@ -27,10 +27,11 @@ export const WorkListItem = ({
 			<div
 				className={css({
 					display: "flex",
-					gap: "6",
+					flexDirection: { base: "column", md: "row" },
+					gap: { base: "4", md: "6" },
 					alignItems: "start",
 					borderLeft: "2px solid transparent",
-					paddingLeft: "6",
+					paddingLeft: { base: "4", md: "6" },
 					transition: "all",
 					_hover: {
 						borderColor: "primary",
@@ -39,8 +40,9 @@ export const WorkListItem = ({
 			>
 				<div
 					className={css({
-						width: "48",
-						height: "32",
+						width: { base: "full", md: "48" },
+						height: { base: "auto", md: "32" },
+						aspectRatio: { base: "3/2", md: "auto" },
 						backgroundColor: "muted",
 						borderRadius: "md",
 						overflow: "hidden",
