@@ -3,12 +3,12 @@ import { css } from "styled-system/css";
 import type { Metadata } from "next";
 import { Footer } from "../components/footer";
 import "highlight.js/styles/github-dark-dimmed.css";
-import { M_PLUS_Rounded_1c } from "next/font/google";
+import { Noto_Sans_JP } from "next/font/google";
 
-const mPlusRounded = M_PLUS_Rounded_1c({
+const notoSansJP = Noto_Sans_JP({
 	weight: ["400", "500", "700"],
 	subsets: ["latin"],
-	variable: "--font-m-plus-rounded",
+	variable: "--font-noto-sans-jp",
 });
 
 export const metadata: Metadata = {
@@ -22,12 +22,9 @@ export default function RootLayout({
 	children: React.ReactNode;
 }>) {
 	return (
-		<html
-			lang="ja"
-			className={`${mPlusRounded.variable} ${css({ height: "100%" })}`}
-		>
+		<html lang="ja" className={`${notoSansJP.variable} ${css({ height: "100%" })}`}>
 			<body
-				className={`${mPlusRounded.className} ${css({
+				className={`${notoSansJP.className} ${css({
 					backgroundColor: "background",
 					minHeight: "100vh",
 					display: "flex",
