@@ -126,9 +126,8 @@ export default async function BlogPage({ params }: { params: Params }) {
 							},
 							"& a": {
 								color: "link",
-								_hover: {
-									textDecoration: "underline",
-								},
+								textDecoration: "underline",
+								fontWeight: "medium",
 							},
 							"& ul, & ol": {
 								marginBottom: "4",
@@ -146,14 +145,17 @@ export default async function BlogPage({ params }: { params: Params }) {
 								marginBottom: "2",
 								paddingLeft: "2",
 							},
-							"& code": {
+							"& :not(pre) > code": {
 								backgroundColor: "muted",
-								color: "foreground",
-								paddingX: "1.5",
+								color: "muted-foreground",
+								paddingX: "1",
 								paddingY: "0.5",
 								borderRadius: "sm",
 								fontSize: "sm",
 								fontFamily: "mono",
+								border: "1px solid",
+								borderColor: "muted",
+								fontWeight: "normal",
 							},
 							"& pre": {
 								backgroundColor: "muted",
@@ -164,6 +166,9 @@ export default async function BlogPage({ params }: { params: Params }) {
 							"& pre code": {
 								backgroundColor: "transparent",
 								padding: "0",
+								border: "none",
+								fontWeight: "normal",
+								fontSize: "sm",
 							},
 							"& blockquote": {
 								borderLeft: "4px solid",

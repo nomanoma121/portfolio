@@ -52,7 +52,7 @@ export function getAllBlogs() {
 			slug,
 			title,
 			description: description || "",
-			date: date instanceof Date ? date.toISOString().split('T')[0] : date,
+			date: new Date(date).toISOString().split('T')[0],
 		};
 	});
 

@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { css } from "styled-system/css";
-import { ThemeToggle } from "../theme-toggle";
 
 export const Header = () => {
 	const headerLink = css({
@@ -69,9 +68,6 @@ export const Header = () => {
 					<Link href="/blogs" className={headerLink}>
 						Blogs
 					</Link>
-				</li>
-				<li className={css({ marginLeft: "4" })}>
-					<ThemeToggle />
 				</li>
 			</ul>
 		</header>
