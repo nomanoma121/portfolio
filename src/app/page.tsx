@@ -257,7 +257,7 @@ const Home = () => {
 							marginBottom: "8",
 						})}
 					>
-						<h2 className={css({ fontSize: "2xl", fontWeight: "bold" })}>
+						<h2 className={css({ fontSize: "2xl", fontWeight: "bold", color: "foreground" })}>
 							Blogs
 						</h2>
 						<Link href="/blogs">
@@ -310,6 +310,7 @@ const Home = () => {
 							fontSize: "2xl",
 							fontWeight: "bold",
 							marginBottom: "8",
+							color: "foreground",
 						})}
 					>
 						Timeline
