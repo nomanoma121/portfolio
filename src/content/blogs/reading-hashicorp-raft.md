@@ -1,5 +1,5 @@
 ---
-title: hashicorp/raftを読んだ時のメモ
+title: hashicorp/raftを読んだメモ
 description: hashicorp/raftを少しだけ読んだので気づいたことを簡単に書きます
 date: 2026-01-19
 ---
