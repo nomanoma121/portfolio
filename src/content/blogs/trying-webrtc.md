@@ -46,3 +46,13 @@ NATの中にSymmetric NATというものがあり、これは宛先IPアドレ�
 - [https://webrtcforthecurious.com/ja/](https://webrtcforthecurious.com/ja/)
 - [https://imageflux.sakura.ad.jp/column/webrtc/](https://imageflux.sakura.ad.jp/column/webrtc/)
 - [https://developer.mozilla.org/ja/docs/Glossary/ICE](https://developer.mozilla.org/ja/docs/Glossary/ICE)
+
+## おまけ
+
+WebRTCを使ってビデオチャットアプリを作りました。Cloudflare Durable ObjectsとWorkersを使ってシグナリングサーバーを構築、フロントエンドはPagesでデプロイしてます。よかったら覗いてみてください。
+
+(本来はアプリの実装について記事を書きたかったのですが、あまり時間もかけたくないなと言うことでおまけです)
+
+[simple-video-chat.pages.dev](simple-video-chat.pages.dev)
+
+![ビデオチャット](/images/trying-webrtc/video-chat-demo.png)
