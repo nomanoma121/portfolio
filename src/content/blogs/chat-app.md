@@ -19,6 +19,8 @@ updatedAt: 2026-01-10
 
 [Chat-App](https://chat.nomanoma-dev.com/)
 
+※ 現在は非公開にしています
+
 ## 主な機能
 
 主な機能として以下です。

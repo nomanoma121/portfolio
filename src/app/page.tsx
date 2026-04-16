@@ -72,32 +72,11 @@ const Home = () => {
 					>
 						About me
 					</h2>
-					<div className={css({ maxWidth: "none" })}>
-						<p
-							className={css({
-								color: "muted-foreground",
-								lineHeight: "relaxed",
-								marginBottom: "4",
-							})}
-						>
-							埼玉大学工学部情報工学科2年生です。現在は埼玉に住んでいます。
+					<div className={css({ display: "flex", flexDirection: "column", gap: "4" })}>
+						<p className={css({ color: "muted-foreground", lineHeight: "relaxed" })}>
+							埼玉大学工学部情報工学科3年生です。現在は埼玉に住んでいます。
 						</p>
-						<p
-							className={css({
-								color: "muted-foreground",
-								lineHeight: "relaxed",
-								marginBottom: "4",
-							})}
-						>
-							高校のころに少しだけプログラミングを触ったことはありましたが、本格的に始めたのは大学に入ってからなので、プログラミング歴はだいたい1年くらいです。
-						</p>
-						<p
-							className={css({
-								color: "muted-foreground",
-								lineHeight: "relaxed",
-								marginBottom: "4",
-							})}
-						>
+						<p className={css({ color: "muted-foreground", lineHeight: "relaxed" })}>
 							大学ではプログラミングサークル
 							<a
 								href="https://maximum.vc"
@@ -111,20 +90,15 @@ const Home = () => {
 							>
 								Maximum
 							</a>
-							に所属しています。今年からは講師としても活動させていただいています。
+							に所属しています。昨年から講師としても活動させていただいています。
 						</p>
-						<p
-							className={css({
-								color: "muted-foreground",
-								lineHeight: "relaxed",
-							})}
-						>
-							今までは主にWeb開発を行っていましたが、最近はインフラ分野にも興味があり、少しずつ学んでいけたらと思っています。
+						<p className={css({ color: "muted-foreground", lineHeight: "relaxed" })}>
+							バックエンドやインフラの領域に興味があり、Go を使った API 開発や Kubernetes を用いたインフラ構築に取り組んでいます。
 						</p>
 					</div>
 				</section>
 
-				{/* Skills Section - 従来のデザイン維持 */}
+				{/* Skills Section */}
 				<section
 					className={css({
 						marginBottom: "20",
@@ -143,42 +117,35 @@ const Home = () => {
 					>
 						Skills
 					</h2>
-					<p
-						className={css({
-							color: "muted-foreground",
-							lineHeight: "relaxed",
-							marginBottom: "4",
-						})}
-					>
-						主にWeb開発を行っており、TypeScript, Goなどをよく使用しています。
-					</p>
-					<p
-						className={css({
-							color: "muted-foreground",
-							lineHeight: "relaxed",
-							marginBottom: "4",
-						})}
-					>
-						個人開発ではありますが、フロントエンド、バックエンドの両方経験があります。フレームワークなどはフロントエンドではReact、バックエンドだと
-						Echo ( Go ) や Hono.js ( Node.js ) を使用することが多いです。
-					</p>
-					<p
-						className={css({
-							color: "muted-foreground",
-							lineHeight: "relaxed",
-							marginBottom: "4",
-						})}
-					>
-						最近はPCを購入して自宅サーバーとして運用するなどインフラ分野にも挑戦しており、LinuxやDockerに関する基礎的な知識も身につけています。
-					</p>
-					<p
-						className={css({
-							color: "muted-foreground",
-							lineHeight: "relaxed",
-						})}
-					>
-						サークルの方では共同開発も行っており、Gitを使用した開発にもそこそこ慣れています。
-					</p>
+					<div className={css({ display: "flex", flexDirection: "column", gap: "4" })}>
+						{[
+							{ label: "Languages", value: "Go / TypeScript / Python" },
+							{ label: "Backend", value: "gRPC / REST API / WebSocket / Redis / PostgreSQL" },
+							{ label: "Infrastructure", value: "Kubernetes / Docker / AWS / Ansible / Prometheus / Grafana" },
+							{ label: "Frontend", value: "React / Next.js" },
+							{ label: "Others", value: "Linux / 応用情報技術者" },
+						].map(({ label, value }) => (
+							<div
+								key={label}
+								className={css({
+									display: "grid",
+									gridTemplateColumns: "160px 1fr",
+									gap: "4",
+									alignItems: "baseline",
+								})}
+							>
+								<span
+									className={css({
+										fontWeight: "medium",
+										color: "foreground",
+									})}
+								>
+									{label}
+								</span>
+								<span className={css({ color: "muted-foreground" })}>{value}</span>
+							</div>
+						))}
+					</div>
 				</section>
 
 				{/* Works Section */}
