@@ -53,6 +53,6 @@ WebRTCを使ってビデオチャットアプリを作りました。Cloudflare 
 
 (本来はアプリの実装について記事を書きたかったのですが、あまり時間もかけたくないなと言うことでおまけです)
 
-[simple-video-chat.pages.dev](simple-video-chat.pages.dev)
+https://simple-video-chat.pages.dev
 
 ![ビデオチャット](/images/blogs/trying-webrtc/video-chat-demo.png)
